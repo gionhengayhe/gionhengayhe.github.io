@@ -1,146 +1,146 @@
 [
 {
-	"uri": "//localhost:1313/",
+	"uri": "/",
 	"title": "Data Lake on AWS: Clean Data with Lambda Triggers",
 	"tags": [],
 	"description": "",
 	"content": "Data Lake on AWS: Clean Data with Lambda Triggers Tổng quan Workshop này hướng dẫn bạn tạo một hệ thống Data Lake trên AWS để thu thập, xử lý, làm sạch và truy vấn dữ liệu. Chúng ta sẽ bắt đầu bằng việc thu thập dữ liệu từ API, upload vào S3, sau đó kết hợp AWS Lambda trigger để tự động làm sạch dữ liệu ngay khi tải lên. Dữ liệu sẽ được đổ vào Glue Data Catalog để phân tích bằng Athena, chuyển đổi qua Glue Job, và trực quan hóa với QuickSight.\nMục đích Tìm hiểu về Data Lake: Giúp người tham gia hiểu rõ Data Lake là gì, cách xây dựng và vận hành Data Lake trên AWS.\nTự động hóa quy trình làm sạch dữ liệu: Đồng bộ các dữ liệu upload lên S3 và xử lý ngay lập tức bằng Lambda trigger.\nTăng cường kỹ năng phân tích dữ liệu: Tìm hiểu Glue Data Catalog, truy vấn Athena, và biểu diễn trực quan QuickSight.\nĐộc lập và linh hoạt: Xây dựng mô hình hợp nhất cho nhiều loại dữ liệu, đầu vào từ API, S3, hay dữ liệu ngoại.\nYêu cầu: Tài khoản AWS: User có quyền Admin và đã thiết lập billing.\nDữ liệu API: Link dữ liệu sẽ được cung cấp trong workshop.\nChi phí: AWS Free Tier: S3, Lambda, Athena AWS Glue Job: 0.44$/h for one session QuickSight: 30 days free "
 },
 {
-	"uri": "//localhost:1313/1-introduction/",
+	"uri": "/1-introduction/",
 	"title": "Introduction",
 	"tags": [],
 	"description": "",
 	"content": "Overview Data Lake is a technical term related to Big Data. A Data Lake is simply a repository that holds raw data awaiting processing, analysis, and insights.\nData Lake has the following properties:\nCollects everything – stores all types of data, whether raw or processed, over a prolonged period. Multi-user – allows multiple users to refine, explore, and enrich the data. Flexible access – supports various data access patterns on shared infrastructure: batch, interactive, real-time, search, in-memory, and other processing tools. Amazon EventBridge is a serverless event bus service that makes it easy to connect your applications with data from a variety of sources.\nAmazon Glue is a complete ETL service. You can use Glue Crawlers to identify your data and store related metadata (e.g., table definitions and schema) in the Glue Data Catalog. Once categorized, your data becomes immediately searchable, queryable, and ready for ETL jobs.\nAWS Glue ETL can generate code to perform data transformation and load the data into storage. AWS Glue is capable of creating customizable, reusable Python code.\nOnce your ETL Jobs are ready, we can schedule them to run on a scalable Apache Spark environment managed by AWS Glue.\nAmazon Athena: an interactive query service used to analyze data in Amazon S3 using standard SQL. You simply point to your data in Amazon S3, define the schema, and start querying using the built-in query editor. Amazon Athena allows you to exploit all your data in Amazon S3 without having to set up complex ETL processes. Athena charges based on the queries that are run.\nAmazon Athena uses Presto with ANSI SQL support and works with several standard data formats, including CSV, JSON, ORC, Avro, and Parquet. Athena is recommended for fast querying needs, but it can also handle complex analytics, including joins on large datasets, window functions, and arrays.\nAmazon QuickSight: a fully managed data visualization service by AWS.\nData source is an external data repository, and you need to configure how to access data in this external repository, e.g., Amazon S3, Amazon Athena, Salesforce, etc.\nDataset defines the specific data within the Data source you want to use. For example, the Data source could be a table if you are connecting to a database Data source. It could be a file if you are connecting to an Amazon S3 Data source.\nAnalysis contains a collection of Visuals and stories relevant, for instance, to a specific business objective or KPI.\nVisual is a graphical representation of your data. You can create different types of Visuals within an analysis, using different datasets and Visual types.\nDashboard is a page that includes one or more Analyses for viewing only, which you can share with other Amazon QuickSight users for reporting purposes. The Dashboard retains the configuration of the Analysis at the time you publish it, including things like filters, parameters, controls, and sorting order.\n"
 },
 {
-	"uri": "//localhost:1313/6-analysis-visualization/1-analysis-athena/",
+	"uri": "/6-analysis-visualization/1-analysis-athena/",
 	"title": "Analysis with Athena",
 	"tags": [],
 	"description": "",
 	"content": "Analysis with Athena As Athena uses the AWS Glue Catalog to track data sources, all tables in Glue can be queried through Athena.\nGo to the AWS Management Console\nFind Athena Select Athena In the Athena interface:\nData Source, select AwsDataCatalog Database, select summitdb Select processed-data table Select Preview Table "
 },
 {
-	"uri": "//localhost:1313/3-lambda-setup/1-creating-bucket/",
+	"uri": "/3-lambda-setup/1-creating-bucket/",
 	"title": "Create an S3 Bucket",
 	"tags": [],
 	"description": "",
 	"content": "Download data Click on this: Post data Save with Ctrl + S Click on this: Comment data Save with Ctrl + S On the file .json you just downloaded, you can change the code to testing Clean Data Use Case You can modify the data for testing purposes: delete some records, set certain fields to null, or change the id or postId values from numbers to strings.\nCreate S3 Bucket Visit the AWS Management Console\nSearch for S3 Select S3 In the S3 interface\nChoose buckets Select Create bucket In the Create bucket interface\nFor Bucket name, enter datalake-demo-bucket Click Create bucket Successfully created the bucket\nSelect the newly created bucket In the new bucket interface\nSelect Create folder In the Create folder interface\nFor Folder name, enter raw-data Successfully created the folder At folder raw-data\nCreate post and comment folders After successfully creating the 2 folders, we will not upload the files immediately but will proceed to the next step, which is Creating the Lambda Function to handle data cleaning\n"
 },
 {
-	"uri": "//localhost:1313/4-create-datalog/1-create-glue-crawler/",
+	"uri": "/4-create-datalog/1-create-glue-crawler/",
 	"title": "Create AWS Glue Crawler",
 	"tags": [],
 	"description": "",
 	"content": "Create Glue Crawler Access the AWS Management Console Find AWS Glue. Select AWS Glue. In the AWS Glue interface, select Crawlers. Choose Create Crawler. In the Add Crawler interface, enter Crawler name as summitcrawler and select Next. For Add data source, select S3. Choose S3 path through Browse. Choose: datalate-bucket-demo/cleaned-data. Also, select Crawl new sub-folders only and Add an S3 data source. After adding the data source, select Next. For IAM role, choose AWSGlueServiceDefault. Then, select Next. For Target database, perform Add database. Create a database by entering the database name as summitdb and selecting Create database. After creating the database, select the database and choose Next. Review the configuration and select Create crawler. Crawler creation successful. Then, choose Run crawler. It takes about 2-3 minutes to run the crawler. When you see the crawler status as Ready. In the AWS Glue interface, select Table, and you will see 2 data tables. Select the post data table. Select the comment data table. Explore the details of the data table. "
 },
 {
-	"uri": "//localhost:1313/2-preparation-steps/1-glue-role/",
+	"uri": "/2-preparation-steps/1-glue-role/",
 	"title": "Creating an Glue Service Role",
 	"tags": [],
 	"description": "",
 	"content": "Creating an Glue Service Role In this step, we will navigate to the IAM Console and create a role for the Glue service. This role will allow AWS Glue to access data in S3 and create necessary objects in the Glue Catalog.\nAccess the AWS Management Console\nSearch for IAM Select IAM In the IAM console:\nSelect Roles Choose Create role In the Select trusted entity step:\nChoose AWS Service For Use case, select Glue Click Next In the Add permissions step:\nSearch for the AmazonS3FullAccess policy Select the AmazonS3FullAccess policy Click Next Similar to step 4:\nLook for the AWSGlueServiceRole policy Select the AWSGlueServiceRole policy In the Role details interface:\nFor Role name, enter AWSGlueServiceRoleDefault In the Add permissions step:\nReview the two policies Click Create role We have now completed creating the IAM role\n"
 },
 {
-	"uri": "//localhost:1313/3-lambda-setup/2-creating-lambda/",
+	"uri": "/3-lambda-setup/2-creating-lambda/",
 	"title": "Create Lambda function",
 	"tags": [],
 	"description": "",
 	"content": "Creating lambda function Creating lambda function for post data Access the AWS Management Console\nSearch for Lambda Select Lambda Choose Create a function At function name: Clean-PostData\nAt runtime, choose Python 3.13 Change default execution role, choose Use an existing role\nChoose AWSLambdaRoleDefault\nClick Create function Add this code\nimport json\rimport boto3\rdef lambda_handler(event, context):\rtry:\rbucket_name = event[\u0026#39;detail][\u0026#39;bucket\u0026#39;][\u0026#39;name\u0026#39;]\rfile_key = event[\u0026#39;detail\u0026#39;][\u0026#39;object\u0026#39;][\u0026#39;key\u0026#39;]\rresponse = s3.get_object(Bucket=bucket_name, Key=file_key)\rraw_data = response[\u0026#39;Body\u0026#39;].read().decode(\u0026#39;utf-8\u0026#39;)\rposts = json.loads(raw_data)\rcleaned_data = []\rfor post in posts:\rif (isinstance(post.get(\u0026#39;userId\u0026#39;), int) and\risinstance(post.get(\u0026#39;id\u0026#39;), int) and\risinstance(post.get(\u0026#39;title\u0026#39;), str) and\risinstance(post.get(\u0026#39;body\u0026#39;), str) and\rcleaned_data.append(post))\rcleaned_file_key = file_key.replace(\u0026#39;raw-data/post\u0026#39;, \u0026#39;cleaned-data\u0026#39;/post)\rcleaned_file_content = \u0026#34;\\n\u0026#34;.join(json.dumps(post) for post in cleaned_data)\rs3.put_object(Bucket=bucket_name, Key=cleaned_file_key, Body=cleaned_file_content)\rprint(f\u0026#34;Cleaned data uploaded to :s3://{bucket_name}/{cleaned_file_key}\u0026#34;)\rexcept Exception as e:\rprint(f\u0026#34;Error processing file {file_key}: {e}\u0026#34;)\rraise e Because AWS Glue cannot interpret JSON Array as JSON Objects for schema mapping, we need to convert the data into JSON Object format.\nThis code will check the incoming data, and if the data line is not in the correct format, it will skip that data.\nuserId must be an integer.\nid must be an integer.\ntitle must be a string.\nbody must be a string.\nClick Deploy(Ctrl+Shift+U) Creating lambda function for comment data Simirlar to Creating lambda function for post data, create a Lambda Function Clean-CommentData\nUsing this code:\nimport json\rimport boto3\rdef lambda_handler(event, context):\rtry:\rbucket_name = event[\u0026#39;detail][\u0026#39;bucket\u0026#39;][\u0026#39;name\u0026#39;]\rfile_key = event[\u0026#39;detail\u0026#39;][\u0026#39;object\u0026#39;][\u0026#39;key\u0026#39;]\rresponse = s3.get_object(Bucket=bucket_name, Key=file_key)\rraw_data = response[\u0026#39;Body\u0026#39;].read().decode(\u0026#39;utf-8\u0026#39;)\rcomments = json.loads(raw_data)\rcleaned_data = []\rfor comment in comments:\rif (isinstance(post.get(\u0026#39;postId\u0026#39;), int) and\risinstance(post.get(\u0026#39;id\u0026#39;), int) and\risinstance(post.get(\u0026#39;name\u0026#39;), str) and\risinstance(post.get(\u0026#39;email\u0026#39;), str) and\risinstance(post.get(\u0026#39;body\u0026#39;), str) and\rcleaned_data.append(post))\rcleaned_file_key = file_key.replace(\u0026#39;raw-data/comment\u0026#39;, \u0026#39;cleaned-data\u0026#39;/comment)\rcleaned_file_content = \u0026#34;\\n\u0026#34;.join(json.dumps(comment) for post in cleaned_data)\rs3.put_object(Bucket=bucket_name, Key=cleaned_file_key, Body=cleaned_file_content)\rprint(f\u0026#34;Cleaned data uploaded to :s3://{bucket_name}/{cleaned_file_key}\u0026#34;)\rexcept Exception as e:\rprint(f\u0026#34;Error processing file {file_key}: {e}\u0026#34;)\rraise e "
 },
 {
-	"uri": "//localhost:1313/2-preparation-steps/2-lambda-role/",
+	"uri": "/2-preparation-steps/2-lambda-role/",
 	"title": "Create Lambda role",
 	"tags": [],
 	"description": "",
 	"content": "Creating an Glue Service Role In this step, we will navigate to the IAM Console and create a role for the Lambda function service. This role will allow Lambda function to access data in S3, clean data and and create necessary objects in the Lambda Catalog.\nAccess the AWS Management Console\nSearch for IAM Select IAM In the IAM console:\nSelect Roles Choose Create role In the Select trusted entity step:\nChoose AWS Service For Use case, select Lambda Click Next In the Add permissions step:\nSearch for the AmazonS3FullAccess policy Select the AmazonS3FullAccess policy Click Next Similar to step 4:\nLook for the AWSLambda_FullAccess policy Select the AWSLambda_FullAccess policy Look for the AWSLambdaBasicExecutionRole policy Select the AWSLambdaBasicExecutionRole policy In the Role details interface:\nFor Role name, enter AWSLambdaRoleDefault In the Add permissions step:\nReview the three policies Click Create role We have now completed creating the IAM role\n"
 },
 {
-	"uri": "//localhost:1313/2-preparation-steps/3-policy/",
+	"uri": "/2-preparation-steps/3-policy/",
 	"title": "Create Policy",
 	"tags": [],
 	"description": "",
 	"content": "Create Policy Access AWS Management Console\nFirst, you need to access the AWS Management Console at https://aws.amazon.com/console/. Log in to your AWS account\nLog in to your AWS account using your username and password. Open the IAM (Identity and Access Management) page\nAfter logging in successfully, select the “IAM” service by searching for it in the search bar or finding it in the list of services. Create a Policy\nIn the IAM interface, select “Policies” from the left menu. Click on the “Create policy” button to start creating a new policy. Paste JSON Policy\nOn the “Create policy” page, choose the “JSON” section and paste the JSON policy content you have provided above into the text box. Ensure that the JSON policy is marked as valid and free of syntax errors. {\r\u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;,\r\u0026#34;Statement\u0026#34;: [\r{\r\u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;,\r\u0026#34;Action\u0026#34;: \u0026#34;iam:PassRole\u0026#34;,\r\u0026#34;Resource\u0026#34;: \u0026#34;arn:aws:iam::AccountID:role/AWSGlueServiceRoleDefault\u0026#34;\r}\r]\r} Name the Policy\nNext, you need to name the policy. Enter the name in the “Name” field. Provide a description (optional) for the policy if you wish. Review and Create Policy\nClick the “Review policy” button to review your policy information. After a thorough review, if there are no errors, click the “Create policy” button to create the new policy. Attach Policy to AWSGlueServiceRoleDefault\nOnce the policy has been successfully created, you need to attach it to the AWSGlueServiceRoleDefault role. Select “Roles” from the left-hand menu in the IAM interface. Find and select the “AWSGlueServiceRoleDefault” role. On the role details page, select the “Permissions” tab and then click the “Add inline policy” button. On the “Create policy” page, search for and select the policy you just created. Click the “Next: Review policy” button to review again. After reviewing and ensuring there are no errors, click the “Create policy” button to attach the policy to the role. "
 },
 {
-	"uri": "//localhost:1313/4-create-datalog/2-data-check/",
+	"uri": "/4-create-datalog/2-data-check/",
 	"title": "Data check",
 	"tags": [],
 	"description": "",
 	"content": "Data check Go to the AWS Management Console\nFind S3 Select S3 In the S3 interface\nSelect Buckets Select datalake-bucket-demo We will create a folder for Athena\nSelect Create folder In the Create folder interface\nFolder name, enter Athena Select Create folder Successfully created folder\nGo to the AWS Management Console\nFind Athena Select Athena In the Athena interface\nSelect View settings to set the path to store query results In the Amazon Athena interface\nSelect Settings Select Manage Select the path to the newly created Athena folder, then select Choose\nReturn to Manage settings interface, check again and select Save We use Amazon Athena to query data\nData Source, select AwsDataCatalog Database, select summitdb Select comment table Select Preview Table Make a query of 10 rows of data from the comment table in the database summitdb\nQuery successful Test data Checking data of comment table where postid = 10 Checking data of post table limit 10; Table comment join table post Check at folder datalake-buck-demo/Athena/, you will see the results of the query (the returned records) are stored in a specified folder in S3. "
 },
 {
-	"uri": "//localhost:1313/2-preparation-steps/",
+	"uri": "/2-preparation-steps/",
 	"title": "Preparation Steps",
 	"tags": [],
 	"description": "",
 	"content": "Preparation Steps We will prepare to create an IAM role for AWS Glue.\nContents Create Glue service role Create Lambda function role Create Policy "
 },
 {
-	"uri": "//localhost:1313/6-analysis-visualization/2-visualize-quicksight/",
+	"uri": "/6-analysis-visualization/2-visualize-quicksight/",
 	"title": "Visualize with QuickSight",
 	"tags": [],
 	"description": "",
 	"content": "Visualize with QuickSight In this step, we will perform visualization using QuickSight.\nLog in to the Amazon QuickSight Console and complete the registration process. You can refer to the registration process here.\nAccess the AWS Management Console\nFind QuickSight Select QuickSight Note: Pay attention to the Region you are using. Check and switch the Region if necessary to avoid errors.\nIn the QuickSight interface, select Manage QuickSight Configure Permissions\nSelect Security \u0026amp; permissions Select Manage Select the services and choose Amazon S3\nSelect S3 Buckets Linked To QuickSight Account Choose datalake-bucket-demo Select Finish Select and review the Role and services. Then, select Save In the QuickSight interface:\nSelect Datasets Select New dataset In the Create dataset interface:\nChoose the source from Athena Configure the data source:\nData source name, enter summitdemo Choose Validate Connection. If the connection is successful, it will display SSL is enabled Select Create data source Choose a Table:\nCatalog, select AWSDataCatalog Database, enter summitdb Table, select processed_data Select Select In the Finish dataset creation step:\nSelect Directly query your data Select Visualize Select Create Use Amazon QuickSight to visualize the transformed data:\nCount comments each post\nClick on Pie Chart Group/color: postid Value: commentid(Count) Count post each user\nGroup/color: postuserid Value: postid(Count) If you meet error like or Go to IAM Role Console Find aws-quicksight-service-role-\u0026hellip; Click Add Permissions Click Attach policies Search for Quicksight and choose these policies: "
 },
 {
-	"uri": "//localhost:1313/3-lambda-setup/",
+	"uri": "/3-lambda-setup/",
 	"title": "Setup Data Processing Pipeline",
 	"tags": [],
 	"description": "",
 	"content": "Setup Data Processing Pipeline Steps: 3.1. Create an S3 Bucket\n3.2. Create Lambda Function\n3.3. Setup EventBridge and S3 Trigger\n3.4. Upload data and view the results\n"
 },
 {
-	"uri": "//localhost:1313/3-lambda-setup/3-creating-eventbridge/",
+	"uri": "/3-lambda-setup/3-creating-eventbridge/",
 	"title": "Setup EventBridge and S3 Trigger",
 	"tags": [],
 	"description": "",
 	"content": "Creating EventBridge Access the AWS Management Console\nSearch for EventBridge Select Amazon EventBridge At the Amazon EventBridge Console, choose Create Rule At name: TriggerCommentData Click Next At creation method, choose Custom pattern At event pattern: {\r\u0026#34;source\u0026#34;: [\u0026#34;aws.s3\u0026#34;],\r\u0026#34;detail-type\u0026#34;: [\u0026#34;Object Created\u0026#34;],\r\u0026#34;detail\u0026#34;:{\r\u0026#34;bucket\u0026#34;:{\r\u0026#34;name\u0026#34;: [\u0026#34;datalake-bucket-demo\u0026#34;]\r},\r\u0026#34;object\u0026#34;:{\r\u0026#34;key\u0026#34;:[{\r\u0026#34;prefix\u0026#34;: \u0026#34;raw-data/comment\u0026#34;\r}]\r}\r}\r} Click Next At Select a target: Lambda function Function: Clean-CommentData Click Next Review rule, click Create rule Similar to Step 2-6, Create TriggerPostData rule\nUsing this pattern:\n{\r\u0026#34;source\u0026#34;: [\u0026#34;aws.s3\u0026#34;],\r\u0026#34;detail-type\u0026#34;: [\u0026#34;Object Created\u0026#34;],\r\u0026#34;detail\u0026#34;:{\r\u0026#34;bucket\u0026#34;:{\r\u0026#34;name\u0026#34;: [\u0026#34;datalake-bucket-demo\u0026#34;]\r},\r\u0026#34;object\u0026#34;:{\r\u0026#34;key\u0026#34;:[{\r\u0026#34;prefix\u0026#34;: \u0026#34;raw-data/post\u0026#34;\r}]\r}\r}\r} After create TriggerPostData rule, we will have: Comeback to the Clean-PostData and Clean-CommentData Lambda Function, you will see: Setup send notifications to EventBridge for all events in S3 Open the S3 datalake-bucket-demo console, Click Properties At Amazon EventBridge, click Edit Turn on Send notifications to EventBridge for all events in this bucket, then click Save changes Congratulations, you\u0026rsquo;ve successfully created a trigger to activate Lambda when listening to the S3 upload event with EventBridge. Now we\u0026rsquo;ll move on to the next step: Uploading data and viewing the results. "
 },
 {
-	"uri": "//localhost:1313/4-create-datalog/",
+	"uri": "/4-create-datalog/",
 	"title": "Create Data Catalog",
 	"tags": [],
 	"description": "",
 	"content": "Create Data Catalog Contents: 4.1. Create Glue Crawler\n4.2. Data Check\n"
 },
 {
-	"uri": "//localhost:1313/3-lambda-setup/4-watch-result/",
+	"uri": "/3-lambda-setup/4-watch-result/",
 	"title": "Upload data and view the results",
 	"tags": [],
 	"description": "",
 	"content": "Upload data Open folder: datalake-bucket-demo/raw-data/post Click Upload Click Add files Choose file post.json you have downloaded at 3.1. Create S3 Bucket Click Upload Open the Lambda Function Clean-PostData, at Monitor, click View CloudWatch logs Select the latest Log stream based on timestamp. Inside the log events of the selected Log Stream, look for the message:\nCleaned data uploaded to s3://datalake-bucket-demo/cleaned-data/post/post.json. That means your Lambda function has successfully executed and uploaded the cleaned data. Go back to the S3 Console and navigate to the datalake-bucket-demo bucket. Locate the folder cleaned-data/post/. Inside this folder, you will find a file named post.json. Download the post.json file to review its contents.\nYou will notice that the data has been cleaned, with any invalid or malformed entries removed, and structured correctly as JSON objects.\nThis ensures the data is ready for AWS Glue to infer the schema and process it accurately.\nMy raw-data/post.json: In my raw-data post.json, you will find:\r1. The first object is missing the body field.\r2. The second object is missing the title field.\r3. The id field in the third object is a string instead of a number.\r4. The userId field in the fourth object is a string instead of a number.\r5. The raw-data file is an array of JSON objects structured as:\r[{Object 1}, {Object 2}, ..., {Object n}].\rMy cleaned-data/post.json In my cleaned-data post.json, you will see:\r1. The 1st, 2nd, 3rd, and 4th objects have been removed.\r2. The data is now formatted as {Object 1}, {Object 2}, ..., {Object n} without being wrapped in an array.\rSimilar to upload post.json, upload comment.json in raw-data/comment/. That’s how you clean the data using AWS Lambda and EventBridge. Now, let’s move to the next step: Create the Data Catalog.\n"
 },
 {
-	"uri": "//localhost:1313/5-data-transformation/",
+	"uri": "/5-data-transformation/",
 	"title": "Data Transformation",
 	"tags": [],
 	"description": "",
 	"content": "\rIn a silly moment, I only recorded a tiny part of the screen, so a huge chunk of the footage is gone. To make things worse, I accidentally deleted all my project files, so I can\u0026rsquo;t redo it quickly. A tiny recording area and a big, fat delete button? What a combo! I guess this is what they call a \u0026rsquo;learning experience,\u0026rsquo; but it\u0026rsquo;s a pretty expensive one.\nCreate SageMaker Notebook Access the AWS Management Console Find AWS Glue Select AWS Glue Select Notebooks Select Notebook Enter the notebook name as notebook\nChoose IAM role Select Create notebook Wait for about 2-3 minutes, and the notebook will be created. Data Transformation In Notebook\nImport libraries: SparkContext GlueContext boto3 awsglue import sys\rfrom awsglue.transforms import *\rfrom awsglue.utils import getResolvedOptions\rfrom pyspark.context import SparkContext\rfrom awsglue.context import GlueContext\rfrom awsglue.job import Job\rimport boto3\rimport time Next we start exploring the data\nInitialize Spark and Glue Contexts sc = SparkContext.getOrCreate()\rglueContext = GlueContext(sc)\rspark = glueContext.spark_session\rjob = Job(glueContext) Load Comment table and view Schema\ncomment_data = glueContext.create_dynamic_frame.from_catalog(database=\u0026#39;summitdb\u0026#39;, table_name=\u0026#39;comment\u0026#39;)\rcomment_data.printSchema() Load Post table and view schema\npost_data = glueContext.create_dynamic_frame.from_catalog(database=\u0026#39;summitdb\u0026#39;, table_name=\u0026#39;post\u0026#39;)\rpost_data.printSchema() Count Rows in Tables post and comment\nprint(\u0026#39;post_data (Count) = \u0026#39; + str(post_data.count()))\rprint(\u0026#39;comment_data (Count) = \u0026#39; + str(comment_data.count())) Preview post_data\npost_data.toDF().show(5) Preview comment_data\ncomment_data.toDF().show(5) Show Comments where postId = 10\ncomment_data.toDF().createOrReplaceTempView(\u0026#39;comment\u0026#39;)\rfilter_postidDF = spark.sql(\u0026#34;select \\* from comment where postid = 10\u0026#34;)\rprint(\u0026#34;PostId = 10 (count): \u0026#34; + str(filter_postidDF.count()))\rfilter_postidDF.show(5) Show Posts where userid = 10\npost_data.toDF().createOrReplaceTempView(\u0026#39;post\u0026#39;)\rfilter_useridDF = spark.sql(\u0026#34;select \\* from post where userid = 10\u0026#34;)\rprint(\u0026#34;UserId = 10 (count): \u0026#34; + str(filter_useridDF.count()))\rfilter_useridDF.show(5) Join comment_data(postid) with post_data(id) and review joined_data\njoined_data = Join.apply(comment_data, post_data, \u0026#39;postId\u0026#39;, \u0026#39;id\u0026#39;) joined_data.printSchema() joined_data.toDF().show(5) Rename columns for clarity\nrenamed_df = (\rjoined_data.toDF()\r.withColumnRenamed(\u0026#34;.id\u0026#34;, \u0026#34;commentId\u0026#34;)\r.withColumnRenamed(\u0026#34;.body\u0026#34;, \u0026#34;commentBody\u0026#34;)\r.withColumnRenamed(\u0026#34;id\u0026#34;, \u0026#34;postId\u0026#34;)\r.withColumnRenamed(\u0026#34;title\u0026#34;, \u0026#34;postTitle\u0026#34;)\r.withColumnRenamed(\u0026#34;name\u0026#34;, \u0026#34;commenterName\u0026#34;)\r.withColumnRenamed(\u0026#34;email\u0026#34;, \u0026#34;commenterEmail\u0026#34;)\r.withColumnRenamed(\u0026#34;body\u0026#34;, \u0026#34;postBody\u0026#34;)\r.withColumnRenamed(\u0026#34;userId\u0026#34;, \u0026#34;postUserId\u0026#34;))\rrenamed_df.show(5) Convert DataFrame back to DynamicFrame\nfrom awsglue.dynamicframe import DynamicFrame\rnew_joined_data = DynamicFrame.fromDF(\rrenamed_df,\rglueContext,\r\u0026#34;new_joined_data\u0026#34;\r) Write transformed Data to S3\ntry:\rdatasink = glueContext.write dynamic from options(\rframe=new_joined_data,\rconnection_type=\u0026#34;s3\u0026#34;,\rconnection_options={\r\u0026#34;path\u0026#34;: \u0026#34;s3://datalake-bucket-demo/cleaned-data/processed-data/\u0026#34;},\rformat=\u0026#34;parquet\u0026#34;)\rprint(\u0026#34;Transform data written to S3\u0026#34;)\rexcept Exception as e:\rprint(\u0026#34;Error writing to S3: \u0026#34; + str(e)) Transform data have written to datalake-bucket-demo/cleaned-data/processed-data/ Trigger and monitor Glue Crawler\nglueclient = boto3.client(\u0026#39;glue\u0026#39;, region_name=\u0026#39;us-ease-1\u0026#39;)\rresponse = glueclient.start_crawler(Name=\u0026#34;summitcrawler\u0026#34;)\rprint(\u0026#39;---\u0026#39;)\rcrawler_state = \u0026#39;\u0026#39;\rwhile crawler_state 1= \u0026#39;STOPPING\u0026#39;:\rresponse = glueclient.get_crawler(Name=\u0026#34;summitcrawler\u0026#34;)\rcrawler_state = str(response[\u0026#39;Crawler\u0026#39;][\u0026#39;State\u0026#39;])\rtime.sleep(1)\rprint(\u0026#39;Crawler stopped\u0026#39;)\rprint (\u0026#39;---\u0026#39;) Check Log events of Crawler\nOpen summitcrawler in AWS Glue Crawler Console Waiting 2 minutues for summitcrawler run Choose the latest Crawlers run and click ViewCloudWatch logs Because some error i don't know, the table Processed-data doesn't create when Summitcrawler run, so we need to create a new AWS Glue Crawler for Processed-data\rAccess the AWS Management Console\nFind AWS Glue. Select AWS Glue. In the AWS Glue interface, select Crawlers. Choose Create Crawler. In the Add Crawler interface, enter Crawler name as joined-crawler and select Next. For Add data source, select S3. Choose S3 path through Browse. Choose: datalate-bucket-demo/cleaned-data/processed-data. Also, select Crawl new sub-folders only and Add an S3 data source. After adding the data source, select Next. Other steps like creating summitcrawler Run joined-crawler Check table processed-data You will see processed-data has schema is table post join table comment "
 },
 {
-	"uri": "//localhost:1313/6-analysis-visualization/",
+	"uri": "/6-analysis-visualization/",
 	"title": "Analysis and visualization",
 	"tags": [],
 	"description": "",
 	"content": "Analysis and visualization Amazon Athena Overview Amazon Athena an interactive query service used to analyze data in Amazon S3 with standard SQL. We simply point to your data in Amazon S3, define the schema and start querying with the built-in query editor. Amazon Athena allows us to mine all of our data in Amazon S3 without having to set up complex ETL processes. Amazon Athena charges based on queries run.\nAmazon Athena uses Presto with ANSI SQL support and works with many standard data formats, including CSV, JSON, ORC, Avro , and Parquet. Athena is recommended for fast querying needs, but it can also handle complex analysis, including large joins, window functions, and arrays. Amazon QuickSight Overview Amazon Quick Sight a data representation service fully managed by AWS. Data source is an external data repository, and you need to configure how to access data in this external repository, e.g., Amazon S3, Amazon Athena, Salesforce, etc.\nDataset defines the specific data within the Data source you want to use. For example, the Data source could be a table if you are connecting to a database Data source. It could be a file if you are connecting to an Amazon S3 Data source.\nAnalysis contains a collection of Visuals and stories relevant, for instance, to a specific business objective or KPI.\nVisual is a graphical representation of your data. You can create different types of Visuals within an analysis, using different datasets and Visual types.\nDashboard is a page that includes one or more Analyses for viewing only, which you can share with other Amazon QuickSight users for reporting purposes. The Dashboard retains the configuration of the Analysis at the time you publish it, including things like filters, parameters, controls, and sorting order.\nContent Data Analysis with Athena Visualize with AWS QuickSight "
 },
 {
-	"uri": "//localhost:1313/7-clean-up/",
+	"uri": "/7-clean-up/",
 	"title": "Clean up resources",
 	"tags": [],
 	"description": "",
 	"content": "Quicksight Remove Visual QuickSight\nDelete Analyzes QuickSight\nAWS Glue Delete Table database in AWS Glue\nDelete Database in AWS Glue\nDelete Notebook\nRemove development endpoints\nEventBridge Delete EventBridge Lambda Function Delete Lambda Function AWS S3 bucket Delete S3 Bucket "
 },
 {
-	"uri": "//localhost:1313/categories/",
+	"uri": "/categories/",
 	"title": "Categories",
 	"tags": [],
 	"description": "",
 	"content": ""
 },
 {
-	"uri": "//localhost:1313/tags/",
+	"uri": "/tags/",
 	"title": "Tags",
 	"tags": [],
 	"description": "",
