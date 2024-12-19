@@ -1,35 +1,36 @@
 +++
-title = "Triển khai Ứng dụng ShareNote với Auto Scaling Group"
+title = "Data Lake on AWS: Clean Data with Lambda Triggers"
 date = 2021
 weight = 1
 chapter = false
 +++
 
-# Triển khai Ứng dụng ShareNote với Auto Scaling Group
+# Data Lake on AWS: Clean Data with Lambda Triggers
 
 #### Tổng quan
 
-Ở bài thực hành này, chúng ta sẽ tiến hành việc triển khai ứng dụng với **Auto Scaling Group** nhằm đảm bảo khả năng co giãn của ứng dụng đó theo nhu cầu của người truy cập.
-Thêm vào đó, chúng ta cũng sẽ triển khai **Load Balancer** nhằm cân bằng tải và điều phối các yêu cầu truy cập từ phía người dùng đến Application Tier của chúng ta.
+Workshop này hướng dẫn bạn tạo một **hệ thống Data Lake trên AWS** để **thu thập, xử lý, làm sạch** và **truy vấn dữ liệu**. Chúng ta sẽ bắt đầu bằng việc thu thập dữ liệu từ **API**, upload vào **S3**, sau đó kết hợp **AWS Lambda trigger** để tự động làm sạch dữ liệu ngay khi tải lên. Dữ liệu sẽ được đổ vào **Glue Data Catalog** để phân tích bằng **Athena**, chuyển đổi qua **Glue Job**, và trực quan hóa với **QuickSight**.
 
-Hãy chắc chắn rằng bạn đã xem qua tài liệu [Triển khai Ứng dụng ShareNote trên Máy ảo Windows/AmazonLinux](https://000004.awsstudygroup.com/) và nắm được cách triển khai ứng dụng trên máy ảo. Chúng ta sẽ cần sử dụng máy ảo được triển khai ShareNote cho việc triển khai đồng loạt và mở rộng trong Auto Scaling Group.
+![Diagram](/images/Datalake.drawio.png?width=90pc)
 
-#### Auto Scaling Group
-**Auto Scaling Group** (*nhóm co giãn tự động*) là một nhóm các EC2 Instance. Nhóm này có thể co giãn số lượng của các EC2 Instance thành viên theo **chính sách co giãn** (*scaling policy*) mà bạn đặt ra.
+#### Mục đích
 
-#### Launch Template
-**Launch Template** (*khuôn mẫu khởi tạo*) là một tính năng giúp bạn tạo khuôn mẫu cho việc khởi tạo các EC2 Instance. Nhờ thế, bạn có thể quy trình hóa và đơn giản hóa công tác khởi tạo các EC2 Instance cho dịch vụ **Auto Scaling** (*co giãn tự động*).
+- Tìm hiểu về **Data Lake**: Giúp người tham gia hiểu rõ **Data Lake** là gì, cách xây dựng và vận hành **Data Lake** trên AWS.
 
-#### Load Balancer
-**Load Balancer** (*máy cân bằng tải*) là một công cụ có thể phân phối lưu lượng dữ liệu được trao đổi tới các tài nguyên AWS (cụ thể trong bài lab này là các EC2 Instances) trong **Target Group**.
+- Tự động hóa quy trình làm sạch dữ liệu: Đồng bộ các dữ liệu upload lên **S3** và xử lý ngay lập tức bằng **Lambda** trigger.
 
-#### Target Group
-**Target Group** (*nhóm mục tiêu*) là một nhóm những thành phần tài nguyên AWS sẽ nhận lưu lượng dữ liệu được phân phối và truyền tải bởi **Load Balancer**.
+- Tăng cường kỹ năng phân tích dữ liệu: Tìm hiểu **Glue Data Catalog**, truy vấn **Athena**, và biểu diễn trực quan **QuickSight**.
 
-#### Nội dung:
-1. [Các bước chuẩn bị](1-prerequisite)
-2. [Khởi tạo Launch Template](2-launch-template)
-3. [Khởi tạo Target Group](3-target-group)
-4. [Khởi tạo Load Balancer](5-load-balance)
-5. [Khởi tạo Auto Scaling Group](4-asg) 
-6. [Kiểm tra kết quả](6-testing)
+- Độc lập và linh hoạt: Xây dựng mô hình hợp nhất cho nhiều loại dữ liệu, đầu vào từ **API**, **S3**, hay **dữ liệu ngoại**.
+
+#### Yêu cầu:
+
+- **Tài khoản AWS:** User có quyền Admin và đã thiết lập billing.
+
+- **Dữ liệu API:** Link dữ liệu sẽ được cung cấp trong workshop.
+
+#### Chi phí:
+
+- [AWS Free Tier: S3, Lambda, Athena](https://aws.amazon.com/vi/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all)
+- [AWS Glue Job: 0.44$/h for one session](https://aws.amazon.com/vi/glue/pricing/)
+- [QuickSight: 30 days free](https://aws.amazon.com/vi/pm/quicksight/?gclid=CjwKCAiAjeW6BhBAEiwAdKltMnYjTIqgPUZFV-osOhJ2zn7Ww25dqqS0yj1NzUwuhCzPW6Wo4vl7jxoCs44QAvD_BwE&trk=4307e550-ebb4-40d7-a036-1a56b1d0ff3f&sc_channel=ps&ef_id=CjwKCAiAjeW6BhBAEiwAdKltMnYjTIqgPUZFV-osOhJ2zn7Ww25dqqS0yj1NzUwuhCzPW6Wo4vl7jxoCs44QAvD_BwE:G:s&s_kwcid=AL!4422!3!651510255273!e!!g!!quicksight%20pricing!19836376477!143940200301)

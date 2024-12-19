@@ -15,10 +15,10 @@ home = [ "HTML", "RSS", "JSON"]
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
-  
+
 [Languages]
 [Languages.en]
-title = "Deploy ShareNote Application on Auto Scaling Group"
+title = "Data Lake on AWS: Clean Data with Lambda Triggers"
 weight = 1
 languageName = "English"
 
@@ -35,7 +35,7 @@ url = "https://www.facebook.com/groups/660548818043427/"
 weight = 20
 
 [Languages.vi]
-title = "Triển khai Ứng dụng ShareNote với Auto Scaling Group"
+title = "Data Lake trên AWS: Làm sạch dữ liệu với Lambda Triggers"
 weight = 2
 languageName = "Tiếng Việt"
 
