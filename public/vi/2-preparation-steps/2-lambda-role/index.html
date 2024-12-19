@@ -12,21 +12,21 @@
     <title>Tạo ShareNote Database :: Data Lake trên AWS: Làm sạch dữ liệu với Lambda Triggers</title>
 
     
-    <link href="/css/nucleus.css?1734597686" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734597686" rel="stylesheet">
-    <link href="/css/hybrid.css?1734597686" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734597686" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734597686" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734597686" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734597686" rel="stylesheet">
-    <link href="/css/theme.css?1734597686" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734597686" rel="stylesheet">
+    <link href="/css/nucleus.css?1734621568" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734621568" rel="stylesheet">
+    <link href="/css/hybrid.css?1734621568" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734621568" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734621568" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734621568" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734621568" rel="stylesheet">
+    <link href="/css/theme.css?1734621568" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734621568" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734597686" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734621568" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734597686"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734621568"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -84,14 +84,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734597686"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734597686"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734621568"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734621568"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734597686"></script>
+<script type="text/javascript" src="/js/search.js?1734621568"></script>
  
   </div>
 
@@ -285,7 +285,7 @@
            
 <li
   data-nav-id="/vi/4-create-datalog/"
-  title="Setup trigger cleaning data"
+  title="Create Data Catalog"
   class="dd-item 
         
         
@@ -293,13 +293,31 @@
         "
 >
   <a href="/vi/4-create-datalog/">
-    <b>3. </b>Setup trigger cleaning data 
+    <b>4. </b>Create Data Catalog 
     <i class="fas fa-check read-icon"></i>
     
   </a>
    
   <ul>
           
+            
+<li
+  data-nav-id="/vi/4-create-datalog/2-data-check/"
+  title="Data check"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/vi/4-create-datalog/2-data-check/">
+    <b>4.2 </b>Data check 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
             
 <li
   data-nav-id="/vi/4-create-datalog/1-create-glue-crawler/"
@@ -317,19 +335,75 @@
   </a>
    
 </li>
-    
-            
+     
+  </ul>
+  
+</li>
+           
 <li
-  data-nav-id="/vi/4-create-datalog/2-data-check/"
-  title="Setup trigger cleaning data"
+  data-nav-id="/vi/5-data-transformation/"
+  title="Create Data Catalog"
   class="dd-item 
         
         
         
         "
 >
-  <a href="/vi/4-create-datalog/2-data-check/">
-    <b>3. </b>Setup trigger cleaning data 
+  <a href="/vi/5-data-transformation/">
+    <b>4. </b>Create Data Catalog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+           
+<li
+  data-nav-id="/vi/6-analysis-visualization/"
+  title="Create Data Catalog"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/vi/6-analysis-visualization/">
+    <b>4. </b>Create Data Catalog 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+  <ul>
+          
+            
+<li
+  data-nav-id="/vi/6-analysis-visualization/1-analysis-athena/"
+  title="Analysis with Athena"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/vi/6-analysis-visualization/1-analysis-athena/">
+    <b>6.1 </b>Analysis with Athena 
+    <i class="fas fa-check read-icon"></i>
+    
+  </a>
+   
+</li>
+    
+            
+<li
+  data-nav-id="/vi/6-analysis-visualization/2-visualize-quicksight/"
+  title="Visualize with QuickSight"
+  class="dd-item 
+        
+        
+        
+        "
+>
+  <a href="/vi/6-analysis-visualization/2-visualize-quicksight/">
+    <b>6.2 </b>Visualize with QuickSight 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -342,7 +416,7 @@
            
 <li
   data-nav-id="/vi/7-clean-up/"
-  title="Dọn dẹp tài nguyên"
+  title="Clean up resources"
   class="dd-item 
         
         
@@ -350,7 +424,7 @@
         "
 >
   <a href="/vi/7-clean-up/">
-    <b>7. </b>Dọn dẹp tài nguyên 
+    <b>7. </b>Clean up resources 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -912,6 +986,72 @@
             
         
                     
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
             
         
         
@@ -934,19 +1074,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734597686"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734597686"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734597686"></script>
-    <script src="/js/jquery.sticky.js?1734597686"></script>
-    <script src="/js/featherlight.min.js?1734597686"></script>
-    <script src="/js/highlight.pack.js?1734597686"></script>
+    <script src="/js/clipboard.min.js?1734621568"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734621568"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734621568"></script>
+    <script src="/js/jquery.sticky.js?1734621568"></script>
+    <script src="/js/featherlight.min.js?1734621568"></script>
+    <script src="/js/highlight.pack.js?1734621568"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734597686"></script>
-    <script src="/js/learn.js?1734597686"></script>
-    <script src="/js/hugo-learn.js?1734597686"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734621568"></script>
+    <script src="/js/learn.js?1734621568"></script>
+    <script src="/js/hugo-learn.js?1734621568"></script>
 
-    <link href="/mermaid/mermaid.css?1734597686" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734597686"></script>
+    <link href="/mermaid/mermaid.css?1734621568" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734621568"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

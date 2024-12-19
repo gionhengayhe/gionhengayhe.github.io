@@ -41,6 +41,19 @@
                 href="//localhost:1313/vi/1-introduction/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/6-analysis-visualization/1-analysis-athena/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-analysis-visualization/1-analysis-athena/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-analysis-visualization/1-analysis-athena/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/3-lambda-setup/1-creating-bucket/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
@@ -67,6 +80,19 @@
                 href="//localhost:1313/vi/3-lambda-setup/2-creating-lambda/"
                 />
   </url><url>
+    <loc>//localhost:1313/vi/4-create-datalog/2-data-check/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/4-create-datalog/2-data-check/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/4-create-datalog/2-data-check/"
+                />
+  </url><url>
     <loc>//localhost:1313/vi/2-preparation-steps/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
@@ -91,6 +117,19 @@
                 rel="alternate"
                 hreflang="vi"
                 href="//localhost:1313/vi/2-preparation-steps/2-lambda-role/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-analysis-visualization/2-visualize-quicksight/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-analysis-visualization/2-visualize-quicksight/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-analysis-visualization/2-visualize-quicksight/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/4-create-datalog/1-create-glue-crawler/</loc>
@@ -132,17 +171,17 @@
                 href="//localhost:1313/vi/3-lambda-setup/3-creating-eventbridge/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-create-datalog/2-data-check/</loc>
+    <loc>//localhost:1313/vi/2-preparation-steps/3-policy/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-create-datalog/2-data-check/"
+                href="//localhost:1313/2-preparation-steps/3-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-create-datalog/2-data-check/"
+                href="//localhost:1313/vi/2-preparation-steps/3-policy/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/4-create-datalog/</loc>
@@ -158,17 +197,30 @@
                 href="//localhost:1313/vi/4-create-datalog/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-preparation-steps/3-policy/</loc>
+    <loc>//localhost:1313/vi/5-data-transformation/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-preparation-steps/3-policy/"
+                href="//localhost:1313/5-data-transformation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-preparation-steps/3-policy/"
+                href="//localhost:1313/vi/5-data-transformation/"
+                />
+  </url><url>
+    <loc>//localhost:1313/vi/6-analysis-visualization/</loc>
+    <lastmod>1970-01-01T07:33:40+07:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="//localhost:1313/6-analysis-visualization/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="vi"
+                href="//localhost:1313/vi/6-analysis-visualization/"
                 />
   </url><url>
     <loc>//localhost:1313/vi/3-lambda-setup/4-watch-result/</loc>
