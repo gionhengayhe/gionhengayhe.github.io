@@ -12,21 +12,21 @@
     <title>Data Lake on AWS: Clean Data with Lambda Triggers :: Data Lake on AWS: Clean Data with Lambda Triggers</title>
 
     
-    <link href="/css/nucleus.css?1743941522" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1743941522" rel="stylesheet">
-    <link href="/css/hybrid.css?1743941522" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1743941522" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1743941522" rel="stylesheet">
-    <link href="/css/auto-complete.css?1743941522" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1743941522" rel="stylesheet">
-    <link href="/css/theme.css?1743941522" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1743941522" rel="stylesheet">
+    <link href="/css/nucleus.css?1743941710" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1743941710" rel="stylesheet">
+    <link href="/css/hybrid.css?1743941710" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1743941710" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1743941710" rel="stylesheet">
+    <link href="/css/auto-complete.css?1743941710" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1743941710" rel="stylesheet">
+    <link href="/css/theme.css?1743941710" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1743941710" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1743941522" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1743941710" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1743941522"></script>
+    <script src="/js/jquery-3.3.1.min.js?1743941710"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -84,14 +84,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1743941522"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1743941522"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1743941710"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1743941710"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1743941522"></script>
+<script type="text/javascript" src="/js/search.js?1743941710"></script>
  
   </div>
 
@@ -565,34 +565,34 @@
 </span>
 
  <h1 id="data-lake-on-aws-clean-data-with-lambda-triggers">Data Lake on AWS: Clean Data with Lambda Triggers</h1>
-<h4 id="tổng-quan">Tổng quan</h4>
-<p>Workshop này hướng dẫn bạn tạo một <strong>hệ thống Data Lake trên AWS</strong> để <strong>thu thập, xử lý, làm sạch</strong> và <strong>truy vấn dữ liệu</strong>. Chúng ta sẽ bắt đầu bằng việc thu thập dữ liệu từ <strong>API</strong>, upload vào <strong>S3</strong>, sau đó kết hợp <strong>AWS Lambda trigger</strong> để tự động làm sạch dữ liệu ngay khi tải lên. Dữ liệu sẽ được đổ vào <strong>Glue Data Catalog</strong> để phân tích bằng <strong>Athena</strong>, chuyển đổi qua <strong>Glue Job</strong>, và trực quan hóa với <strong>QuickSight</strong>.</p>
+<h4 id="overview">Overview</h4>
+<p>This workshop guides you in creating a <strong>Data Lake system on AWS</strong> to <strong>collect, process, clean</strong> and <strong>query data</strong>. We will begin by collecting data from an <strong>API</strong>, uploading it to <strong>S3</strong>, then using <strong>AWS Lambda triggers</strong> to automatically clean the data upon upload. The data will be fed into the <strong>Glue Data Catalog</strong> for analysis with <strong>Athena</strong>, transformed through <strong>Glue Jobs</strong>, and visualized with <strong>QuickSight</strong>.</p>
 <p><img src="/images/Datalake.drawio.png?width=90pc" alt="Diagram"></p>
-<h4 id="mục-đích">Mục đích</h4>
+<h4 id="objectives">Objectives</h4>
 <ul>
 <li>
-<p>Tìm hiểu về <strong>Data Lake</strong>: Giúp người tham gia hiểu rõ <strong>Data Lake</strong> là gì, cách xây dựng và vận hành <strong>Data Lake</strong> trên AWS.</p>
+<p>Learn about <strong>Data Lakes</strong>: Help participants understand what a <strong>Data Lake</strong> is, how to build and operate a <strong>Data Lake</strong> on AWS.</p>
 </li>
 <li>
-<p>Tự động hóa quy trình làm sạch dữ liệu: Đồng bộ các dữ liệu upload lên <strong>S3</strong> và xử lý ngay lập tức bằng <strong>Lambda</strong> trigger.</p>
+<p>Automate data cleaning processes: Synchronize data uploaded to <strong>S3</strong> and process it immediately using <strong>Lambda</strong> triggers.</p>
 </li>
 <li>
-<p>Tăng cường kỹ năng phân tích dữ liệu: Tìm hiểu <strong>Glue Data Catalog</strong>, truy vấn <strong>Athena</strong>, và biểu diễn trực quan <strong>QuickSight</strong>.</p>
+<p>Enhance data analysis skills: Learn about <strong>Glue Data Catalog</strong>, querying with <strong>Athena</strong>, and visualizing with <strong>QuickSight</strong>.</p>
 </li>
 <li>
-<p>Độc lập và linh hoạt: Xây dựng mô hình hợp nhất cho nhiều loại dữ liệu, đầu vào từ <strong>API</strong>, <strong>S3</strong>, hay <strong>dữ liệu ngoại</strong>.</p>
+<p>Independence and flexibility: Build a unified model for various data types, with inputs from <strong>APIs</strong>, <strong>S3</strong>, or <strong>external data</strong>.</p>
 </li>
 </ul>
-<h4 id="yêu-cầu">Yêu cầu:</h4>
+<h4 id="requirements">Requirements:</h4>
 <ul>
 <li>
-<p><strong>Tài khoản AWS:</strong> User có quyền Admin và đã thiết lập billing.</p>
+<p><strong>AWS Account:</strong> User with Admin privileges and billing set up.</p>
 </li>
 <li>
-<p><strong>Dữ liệu API:</strong> Link dữ liệu sẽ được cung cấp trong workshop.</p>
+<p><strong>API Data:</strong> Data links will be provided in the workshop.</p>
 </li>
 </ul>
-<h4 id="chi-phí">Chi phí:</h4>
+<h4 id="costs">Costs:</h4>
 <ul>
 <li><a href="https://aws.amazon.com/vi/free/?all-free-tier.sort-by=item.additionalFields.SortRank&amp;all-free-tier.sort-order=asc&amp;awsf.Free%20Tier%20Types=*all&amp;awsf.Free%20Tier%20Categories=*all">AWS Free Tier: S3, Lambda, Athena</a></li>
 <li><a href="https://aws.amazon.com/vi/glue/pricing/">AWS Glue Job: 0.44$/h for one session</a></li>
@@ -943,19 +943,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1743941522"></script>
-    <script src="/js/perfect-scrollbar.min.js?1743941522"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1743941522"></script>
-    <script src="/js/jquery.sticky.js?1743941522"></script>
-    <script src="/js/featherlight.min.js?1743941522"></script>
-    <script src="/js/highlight.pack.js?1743941522"></script>
+    <script src="/js/clipboard.min.js?1743941710"></script>
+    <script src="/js/perfect-scrollbar.min.js?1743941710"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1743941710"></script>
+    <script src="/js/jquery.sticky.js?1743941710"></script>
+    <script src="/js/featherlight.min.js?1743941710"></script>
+    <script src="/js/highlight.pack.js?1743941710"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1743941522"></script>
-    <script src="/js/learn.js?1743941522"></script>
-    <script src="/js/hugo-learn.js?1743941522"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1743941710"></script>
+    <script src="/js/learn.js?1743941710"></script>
+    <script src="/js/hugo-learn.js?1743941710"></script>
 
-    <link href="/mermaid/mermaid.css?1743941522" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1743941522"></script>
+    <link href="/mermaid/mermaid.css?1743941710" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1743941710"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

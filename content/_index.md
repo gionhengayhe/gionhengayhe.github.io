@@ -7,29 +7,29 @@ chapter = false
 
 # Data Lake on AWS: Clean Data with Lambda Triggers
 
-#### Tổng quan
+#### Overview
 
-Workshop này hướng dẫn bạn tạo một **hệ thống Data Lake trên AWS** để **thu thập, xử lý, làm sạch** và **truy vấn dữ liệu**. Chúng ta sẽ bắt đầu bằng việc thu thập dữ liệu từ **API**, upload vào **S3**, sau đó kết hợp **AWS Lambda trigger** để tự động làm sạch dữ liệu ngay khi tải lên. Dữ liệu sẽ được đổ vào **Glue Data Catalog** để phân tích bằng **Athena**, chuyển đổi qua **Glue Job**, và trực quan hóa với **QuickSight**.
+This workshop guides you in creating a **Data Lake system on AWS** to **collect, process, clean** and **query data**. We will begin by collecting data from an **API**, uploading it to **S3**, then using **AWS Lambda triggers** to automatically clean the data upon upload. The data will be fed into the **Glue Data Catalog** for analysis with **Athena**, transformed through **Glue Jobs**, and visualized with **QuickSight**.
 
 ![Diagram](/images/Datalake.drawio.png?width=90pc)
 
-#### Mục đích
+#### Objectives
 
-- Tìm hiểu về **Data Lake**: Giúp người tham gia hiểu rõ **Data Lake** là gì, cách xây dựng và vận hành **Data Lake** trên AWS.
+- Learn about **Data Lakes**: Help participants understand what a **Data Lake** is, how to build and operate a **Data Lake** on AWS.
 
-- Tự động hóa quy trình làm sạch dữ liệu: Đồng bộ các dữ liệu upload lên **S3** và xử lý ngay lập tức bằng **Lambda** trigger.
+- Automate data cleaning processes: Synchronize data uploaded to **S3** and process it immediately using **Lambda** triggers.
 
-- Tăng cường kỹ năng phân tích dữ liệu: Tìm hiểu **Glue Data Catalog**, truy vấn **Athena**, và biểu diễn trực quan **QuickSight**.
+- Enhance data analysis skills: Learn about **Glue Data Catalog**, querying with **Athena**, and visualizing with **QuickSight**.
 
-- Độc lập và linh hoạt: Xây dựng mô hình hợp nhất cho nhiều loại dữ liệu, đầu vào từ **API**, **S3**, hay **dữ liệu ngoại**.
+- Independence and flexibility: Build a unified model for various data types, with inputs from **APIs**, **S3**, or **external data**.
 
-#### Yêu cầu:
+#### Requirements:
 
-- **Tài khoản AWS:** User có quyền Admin và đã thiết lập billing.
+- **AWS Account:** User with Admin privileges and billing set up.
 
-- **Dữ liệu API:** Link dữ liệu sẽ được cung cấp trong workshop.
+- **API Data:** Data links will be provided in the workshop.
 
-#### Chi phí:
+#### Costs:
 
 - [AWS Free Tier: S3, Lambda, Athena](https://aws.amazon.com/vi/free/?all-free-tier.sort-by=item.additionalFields.SortRank&all-free-tier.sort-order=asc&awsf.Free%20Tier%20Types=*all&awsf.Free%20Tier%20Categories=*all)
 - [AWS Glue Job: 0.44$/h for one session](https://aws.amazon.com/vi/glue/pricing/)
