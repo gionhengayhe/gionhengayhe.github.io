@@ -12,21 +12,21 @@
     <title>Chuyển đổi dữ liệu :: Data Lake trên AWS: Làm sạch dữ liệu với Lambda Triggers</title>
 
     
-    <link href="/css/nucleus.css?1743941711" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1743941711" rel="stylesheet">
-    <link href="/css/hybrid.css?1743941711" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1743941711" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1743941711" rel="stylesheet">
-    <link href="/css/auto-complete.css?1743941711" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1743941711" rel="stylesheet">
-    <link href="/css/theme.css?1743941711" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1743941711" rel="stylesheet">
+    <link href="/css/nucleus.css?1743943720" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1743943720" rel="stylesheet">
+    <link href="/css/hybrid.css?1743943720" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1743943720" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1743943720" rel="stylesheet">
+    <link href="/css/auto-complete.css?1743943720" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1743943720" rel="stylesheet">
+    <link href="/css/theme.css?1743943720" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1743943720" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1743941711" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1743943720" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1743941711"></script>
+    <script src="/js/jquery-3.3.1.min.js?1743943720"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -84,14 +84,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1743941711"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1743941711"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1743943720"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1743943720"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1743941711"></script>
+<script type="text/javascript" src="/js/search.js?1743943720"></script>
  
   </div>
 
@@ -616,7 +616,7 @@
 
 
 	
-<div class="notices info" ><p>Trong một khoảnh khắc ngớ ngẩn, tôi chỉ ghi lại một phần nhỏ của màn hình, vì vậy một phần lớn cảnh quay đã biến mất. Để làm cho mọi thứ tồi tệ hơn, tôi vô tình xóa tất cả các tệp dự án của mình, vì vậy tôi không thể làm lại nhanh chóng. Một khu vực ghi nhỏ và một nút xóa to, béo? Thật là một sự kết hợp! Tôi đoán đây là điều mà người ta gọi là &rsquo;trải nghiệm học tập&rsquo;, nhưng nó khá đắt đỏ.</p>
+<div class="notices info" ><p>Trong một khoảnh khắc ngớ ngẩn, em chỉ ghi hình được một góc nhỏ của màn hình, nên một phần lớn của đoạn video đã biến mất. Tệ hơn nữa, em lại vô tình xóa sạch toàn bộ file dự án, nên không thể làm lại nhanh chóng được. Một vùng ghi hình tí hon và một nút xoá to đùng? Đúng là combo &ldquo;hoàn hảo&rdquo;! Chắc đây là cái người ta gọi là “trải nghiệm học hỏi,” nhưng mà đúng là một trải nghiệm khá đắt giá đấy.</p>
 </div>
 
 <h4 id="tạo-sagemaker-notebook">Tạo SageMaker Notebook</h4>
@@ -835,7 +835,22 @@ print (&#39;---&#39;)
 <li>Trong giao diện <strong>AWS Glue</strong>, chọn <strong>Crawlers</strong>.
 Chọn Create Crawler.
 <img src="/images/4/1/2.png" alt=""></li>
-<li>Trong giao diện <strong>Add Crawler</strong>, nhập <strong>Crawler name</strong> là <code>joined-crawler</code> và chọn <strong>Next</strong>.</li>
+<li>Trong giao diện <strong>Add Crawler</strong>, nhập <strong>Crawler name</strong> là <code>joined-crawler</code> và chọn <strong>Next</strong>.
+<img src="/images/5/23.png" alt=""></li>
+<li>Tại <strong>Add data source</strong>, chọn <strong>S3</strong>.</li>
+<li>Chọn <strong>S3</strong> path thông qua <strong>Browse</strong>. Chọn: <strong>datalate-bucket-demo/cleaned-data/processed-data</strong>. Đồng thời, chọn <strong>Crawl new sub-folders only</strong> và <strong>Add an S3 data source</strong>.</li>
+<li>Sau khi thêm data source, chọn <strong>Next</strong>.<br>
+<img src="/images/5/24.png" alt=""></li>
+<li>Các bước khác như tạo <strong>summitcrawler</strong></li>
+<li>Chạy <strong>joined-crawler</strong><br>
+<img src="/images/5/25.png" alt=""></li>
+<li>Kiểm tra bảng <strong>processed-data</strong><br>
+<img src="/images/5/26.png" alt="">
+<ul>
+<li>Bạn sẽ thấy <strong>processed-data</strong> có schema là bảng <strong>post</strong> được join với bảng <strong>comment</strong><br>
+<img src="/images/5/27.png" alt=""></li>
+</ul>
+</li>
 </ol>
 
 
@@ -1197,19 +1212,19 @@ Chọn Create Crawler.
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1743941711"></script>
-    <script src="/js/perfect-scrollbar.min.js?1743941711"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1743941711"></script>
-    <script src="/js/jquery.sticky.js?1743941711"></script>
-    <script src="/js/featherlight.min.js?1743941711"></script>
-    <script src="/js/highlight.pack.js?1743941711"></script>
+    <script src="/js/clipboard.min.js?1743943720"></script>
+    <script src="/js/perfect-scrollbar.min.js?1743943720"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1743943720"></script>
+    <script src="/js/jquery.sticky.js?1743943720"></script>
+    <script src="/js/featherlight.min.js?1743943720"></script>
+    <script src="/js/highlight.pack.js?1743943720"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1743941711"></script>
-    <script src="/js/learn.js?1743941711"></script>
-    <script src="/js/hugo-learn.js?1743941711"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1743943720"></script>
+    <script src="/js/learn.js?1743943720"></script>
+    <script src="/js/hugo-learn.js?1743943720"></script>
 
-    <link href="/mermaid/mermaid.css?1743941711" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1743941711"></script>
+    <link href="/mermaid/mermaid.css?1743943720" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1743943720"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

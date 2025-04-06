@@ -12,21 +12,21 @@
     <title>Tải lên dữ liệu và xem kết quả :: Data Lake trên AWS: Làm sạch dữ liệu với Lambda Triggers</title>
 
     
-    <link href="/css/nucleus.css?1743941711" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1743941711" rel="stylesheet">
-    <link href="/css/hybrid.css?1743941711" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1743941711" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1743941711" rel="stylesheet">
-    <link href="/css/auto-complete.css?1743941711" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1743941711" rel="stylesheet">
-    <link href="/css/theme.css?1743941711" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1743941711" rel="stylesheet">
+    <link href="/css/nucleus.css?1743943720" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1743943720" rel="stylesheet">
+    <link href="/css/hybrid.css?1743943720" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1743943720" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1743943720" rel="stylesheet">
+    <link href="/css/auto-complete.css?1743943720" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1743943720" rel="stylesheet">
+    <link href="/css/theme.css?1743943720" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1743943720" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1743941711" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1743943720" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1743941711"></script>
+    <script src="/js/jquery-3.3.1.min.js?1743943720"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -84,14 +84,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1743941711"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1743941711"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1743943720"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1743943720"></script>
 <script type="text/javascript">
     
         var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1743941711"></script>
+<script type="text/javascript" src="/js/search.js?1743943720"></script>
  
   </div>
 
@@ -680,12 +680,12 @@
 
 <div class="notices note" ><pre><code>  Trong file post.json raw-data của tôi, bạn sẽ thấy:
 
-  1. Đối tượng đầu tiên thiếu trường body.
-  2. Đối tượng thứ hai thiếu trường title.
-  3. Trường id trong đối tượng thứ ba là một chuỗi thay vì một số.
-  4. Trường userId trong đối tượng thứ tư là một chuỗi thay vì một số.
+  1. Object 1 thiếu trường body.
+  2. Object 2 thiếu trường title.
+  3. Trường id trong object 3 là một chuỗi thay vì một số.
+  4. Trường userId trong object 4 là một chuỗi thay vì một số.
   5. File raw-data là một mảng các đối tượng JSON được cấu trúc như:
-     [{Đối tượng 1}, {Đối tượng 2}, ..., {Đối tượng n}].
+     [{Object 1}, {Object 2}, ..., {Object n}].
 </code></pre>
 </div>
 
@@ -694,10 +694,10 @@
 <p><strong>cleaned-data/post.json</strong> của tôi:
 <img src="/images/3/4/7.png" alt="Dữ liệu bài đăng đã làm sạch">
 
-<div class="notices note" ><pre><code>  Trong file post.json cleaned-data của tôi, bạn sẽ thấy:
+<div class="notices note" ><pre><code>  Trong file cleaned-data/post.json, bạn sẽ thấy:
 
-  1. Các đối tượng thứ 1, 2, 3 và 4 đã bị xóa.
-  2. Dữ liệu bây giờ được định dạng như {Đối tượng 1}, {Đối tượng 2}, ..., {Đối tượng n} mà không được bọc trong một mảng.
+  1. Object 1, 2, 3, 4 đã bị xóa.
+  2. Dữ liệu bây giờ được định dạng như {Object 1}, {Object 2}, ..., {Object n} mà không được bọc trong một mảng.
 </code></pre>
 </div>
 </p>
@@ -1073,19 +1073,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1743941711"></script>
-    <script src="/js/perfect-scrollbar.min.js?1743941711"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1743941711"></script>
-    <script src="/js/jquery.sticky.js?1743941711"></script>
-    <script src="/js/featherlight.min.js?1743941711"></script>
-    <script src="/js/highlight.pack.js?1743941711"></script>
+    <script src="/js/clipboard.min.js?1743943720"></script>
+    <script src="/js/perfect-scrollbar.min.js?1743943720"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1743943720"></script>
+    <script src="/js/jquery.sticky.js?1743943720"></script>
+    <script src="/js/featherlight.min.js?1743943720"></script>
+    <script src="/js/highlight.pack.js?1743943720"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1743941711"></script>
-    <script src="/js/learn.js?1743941711"></script>
-    <script src="/js/hugo-learn.js?1743941711"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1743943720"></script>
+    <script src="/js/learn.js?1743943720"></script>
+    <script src="/js/hugo-learn.js?1743943720"></script>
 
-    <link href="/mermaid/mermaid.css?1743941711" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1743941711"></script>
+    <link href="/mermaid/mermaid.css?1743943720" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1743943720"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

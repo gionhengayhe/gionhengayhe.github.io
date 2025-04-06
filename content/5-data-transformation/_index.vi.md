@@ -7,7 +7,7 @@ pre = "<b>5. </b>"
 +++
 
 {{% notice info %}}
-Trong một khoảnh khắc ngớ ngẩn, tôi chỉ ghi lại một phần nhỏ của màn hình, vì vậy một phần lớn cảnh quay đã biến mất. Để làm cho mọi thứ tồi tệ hơn, tôi vô tình xóa tất cả các tệp dự án của mình, vì vậy tôi không thể làm lại nhanh chóng. Một khu vực ghi nhỏ và một nút xóa to, béo? Thật là một sự kết hợp! Tôi đoán đây là điều mà người ta gọi là 'trải nghiệm học tập', nhưng nó khá đắt đỏ.
+Trong một khoảnh khắc ngớ ngẩn, em chỉ ghi hình được một góc nhỏ của màn hình, nên một phần lớn của đoạn video đã biến mất. Tệ hơn nữa, em lại vô tình xóa sạch toàn bộ file dự án, nên không thể làm lại nhanh chóng được. Một vùng ghi hình tí hon và một nút xoá to đùng? Đúng là combo "hoàn hảo"! Chắc đây là cái người ta gọi là “trải nghiệm học hỏi,” nhưng mà đúng là một trải nghiệm khá đắt giá đấy.
 {{% /notice %}}
 
 #### Tạo SageMaker Notebook
@@ -248,3 +248,15 @@ Trong một khoảnh khắc ngớ ngẩn, tôi chỉ ghi lại một phần nh�
     Chọn Create Crawler.
     ![](/images/4/1/2.png)
 18. Trong giao diện **Add Crawler**, nhập **Crawler name** là `joined-crawler` và chọn **Next**.
+    ![](/images/5/23.png)
+19. Tại **Add data source**, chọn **S3**.
+20. Chọn **S3** path thông qua **Browse**. Chọn: **datalate-bucket-demo/cleaned-data/processed-data**. Đồng thời, chọn **Crawl new sub-folders only** và **Add an S3 data source**.
+21. Sau khi thêm data source, chọn **Next**.  
+    ![](/images/5/24.png)
+22. Các bước khác như tạo **summitcrawler**
+23. Chạy **joined-crawler**  
+    ![](/images/5/25.png)
+24. Kiểm tra bảng **processed-data**  
+    ![](/images/5/26.png)
+    - Bạn sẽ thấy **processed-data** có schema là bảng **post** được join với bảng **comment**  
+      ![](/images/5/27.png)

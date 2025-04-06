@@ -8,9 +8,9 @@ pre = "<b>3.1. </b>"
 
 ## Tải dữ liệu
 
-1. Nhấp vào đây: [Dữ liệu bài đăng](https://jsonplaceholder.typicode.com/posts)
+1. Nhấp vào đây: [Post data](https://jsonplaceholder.typicode.com/posts)
 2. Lưu với **Ctrl + S**
-3. Nhấp vào đây: [Dữ liệu bình luận](https://jsonplaceholder.typicode.com/comments)
+3. Nhấp vào đây: [Comment data](https://jsonplaceholder.typicode.com/comments)
 4. Lưu với **Ctrl + S**
 5. Trên tệp **.json** vừa tải xuống, bạn có thể thay đổi mã để kiểm tra trường hợp sử dụng Làm sạch dữ liệu
 

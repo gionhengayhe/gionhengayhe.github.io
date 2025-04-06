@@ -37,21 +37,21 @@ pre = "<b>3.4 </b>"
       {{% notice note %}}
       Trong file post.json raw-data của tôi, bạn sẽ thấy:
 
-      1. Đối tượng đầu tiên thiếu trường body.
-      2. Đối tượng thứ hai thiếu trường title.
-      3. Trường id trong đối tượng thứ ba là một chuỗi thay vì một số.
-      4. Trường userId trong đối tượng thứ tư là một chuỗi thay vì một số.
+      1. Object 1 thiếu trường body.
+      2. Object 2 thiếu trường title.
+      3. Trường id trong object 3 là một chuỗi thay vì một số.
+      4. Trường userId trong object 4 là một chuỗi thay vì một số.
       5. File raw-data là một mảng các đối tượng JSON được cấu trúc như:
-         [{Đối tượng 1}, {Đối tượng 2}, ..., {Đối tượng n}].
+         [{Object 1}, {Object 2}, ..., {Object n}].
          {{% /notice %}}
 
     - **cleaned-data/post.json** của tôi:
       ![Dữ liệu bài đăng đã làm sạch](/images/3/4/7.png)
       {{% notice note %}}
-      Trong file post.json cleaned-data của tôi, bạn sẽ thấy:
+      Trong file cleaned-data/post.json, bạn sẽ thấy:
 
-      1. Các đối tượng thứ 1, 2, 3 và 4 đã bị xóa.
-      2. Dữ liệu bây giờ được định dạng như {Đối tượng 1}, {Đối tượng 2}, ..., {Đối tượng n} mà không được bọc trong một mảng.
+      1. Object 1, 2, 3, 4 đã bị xóa.
+      2. Dữ liệu bây giờ được định dạng như {Object 1}, {Object 2}, ..., {Object n} mà không được bọc trong một mảng.
          {{% /notice %}}
 
 8.  Tương tự như tải lên **post.json**, tải lên **comment.json** trong **raw-data/comment/**.
