@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Trực quan hóa với QuickSight on Data Lake trên AWS: Làm sạch dữ liệu với Lambda Triggers</title>
-    <link>http://localhost:1313/vi/6-analysis-visualization/2-visualize-quicksight/</link>
+    <link>//localhost:1313/vi/6-analysis-visualization/2-visualize-quicksight/</link>
     <description>Recent content in Trực quan hóa với QuickSight on Data Lake trên AWS: Làm sạch dữ liệu với Lambda Triggers</description>
     <generator>Hugo</generator>
     <language>vi</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="http://localhost:1313/vi/6-analysis-visualization/2-visualize-quicksight/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/vi/6-analysis-visualization/2-visualize-quicksight/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
