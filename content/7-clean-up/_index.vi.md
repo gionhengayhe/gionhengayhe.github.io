@@ -1,5 +1,5 @@
 +++
-title = "Clean up resources"
+title = "Dọn dẹp tài nguyên"
 date = 2021-06-08T18:57:03+07:00
 weight = 7
 chapter = false
@@ -8,28 +8,28 @@ pre = "<b>7. </b>"
 
 #### Quicksight
 
-- Remove Visual QuickSight
+- Xóa Visual QuickSight
 
-- Delete Analyzes QuickSight
+- Xóa Analyzes QuickSight
 
 #### AWS Glue
 
-- Delete Table database in AWS Glue
+- Xóa Table database trong AWS Glue
 
-- Delete Database in AWS Glue
+- Xóa Database trong AWS Glue
 
-- Delete Notebook
+- Xóa Notebook
 
-- Remove development endpoints
+- Xóa development endpoints
 
 #### EventBridge
 
-- Delete EventBridge
+- Xóa EventBridge
 
 #### Lambda Function
 
-- Delete Lambda Function
+- Xóa Lambda Function
 
 #### AWS S3 bucket
 
-- Delete S3 Bucket
+- Xóa S3 Bucket

@@ -1,80 +1,56 @@
 +++
-title = "Tạo ShareNote Database"
+title = "Tạo Lambda role"
 date = 2020
 weight = 2
 chapter = false
 pre = "<b>2.2 </b>"
 +++
 
-Ở bước này, chúng ta sẽ khởi tạo một cơ sở dữ liệu (_database_) sử dụng AWS RDS cho ứng dụng ShareNote được triển khai ở bước tiếp theo.
+## Tạo Glue Service Role
 
-#### Tạo cơ sở dữ liệu cho ShareNote với AWS RDS
+Trong bước này, chúng ta sẽ điều hướng đến IAM Console và tạo một role cho dịch vụ Lambda function. Role này sẽ cho phép Lambda function truy cập dữ liệu trong S3, làm sạch dữ liệu và tạo các đối tượng cần thiết trong Lambda Catalog.
 
-1. Truy cập vào **RDS Management Console** bằng cách gõ và chọn _RDS_ trong thanh tìm kiếm.
-2. Chọn **Create database**.
-3. Lựa chọn các thông số thiết lập sau cho Database: (**Các thông số không được nhắc đến sẽ giữ ở thiết lập mặc định**).
-   - Mục **Choose a database creation method**: Chọn **Standard create**.
-   - Mục **Engine options**: Chọn **MySQL**.
+1.  Truy cập [AWS Management Console]()
 
-![ChooseDatabase](/images/asg/002.png?width=90pc)
+    - Tìm kiếm **IAM**
+    - Chọn **IAM**
+      ![Step1](/images/2/0001-createiamrole.png)
 
-{{% notice info %}}
-Ứng dụng ShareNote sử dụng MySQL nên chúng ta cũng sẽ lựa chọn MySQL Engine.
-{{% /notice %}}
+2.  Trong console **IAM**:
 
-- Kéo màn hình xuống dưới, mục **Templates**: Chọn **Free tier**.
+    - Chọn **Roles**
+    - Chọn **Create role**
+      ![](/images/2/0002-createiamrole.png)
 
-![ChooseTemplates](/images/1/2_Templates.png?width=90pc)
+3.  Trong bước **Select trusted entity**:
 
-- Mục **Settings**:
+    - Chọn **AWS Service**
+    - Đối với **Use case**, chọn **Lambda**
+    - Nhấp vào **Next**
+    - ![](/images/2/2/3.png)
 
-  - **DB instance identifier**: nhập tên cho DB Instance (ví dụ: **sharenote-db**)
+4.  Trong bước **Add permissions**:
 
-  - **Settings**:
-    - **Master username**: thiết lập tài khoản master dùng để truy cập vào cơ sở dữ liệu (ví dụ: **admin**).
-    - **Master password**: thiết lập mật khẩu với ít nhất 8 kí tự và **hạn chế** nhập kí tự đặc biệt (ví dụ: **admin123**).
-    - **Confirm password**: Nhập lại mật khẩu ở phía trên.
+    - Tìm kiếm chính sách **AmazonS3FullAccess**
+    - Chọn chính sách **AmazonS3FullAccess**
+    - Nhấp vào Next
+    - ![](/images/2/0004-createiamrole.png)
 
-{{% notice tip %}}
-Nếu bạn nhập kí tự đặc biệt (ví dụ: ! hoặc @ hoặc #), khi bạn kết nối tới cơ sở dữ liệu trên DB Instance từ EC2 Instance sử dụng hệ điều hành **Ubuntu** ở phần sau, bạn sẽ phải thực hiện thao tác bỏ qua (escape) đối với các kí tự đặc biệt ấy, và điều đó sẽ gia tăng độ phức tạp của bài lab này một cách không cần thiết.
-{{% /notice %}}
+5.  Tương tự như bước 4:
 
-![DatabaseUsername&Password](/images/asg/003.png?width=90pc)
+    - Tìm kiếm chính sách **AWSLambda_FullAccess**
+    - Chọn chính sách **AWSLambda_FullAccess**
+    - ![](/images/2/2/5.png)
+    -
+    - Tìm kiếm chính sách **AWSLambdaBasicExecutionRole**
+    - Chọn chính sách **AWSLambdaBasicExecutionRole**
+    - ![](/images/2/2/6.png)
 
-4. Tiếp tục kéo màn hình xuống, mục **DB instance Class**: dùng để chọn phân loại DB Instance.
-
-- Click chọn phân loại **Burstatble**.
-- Click chọn DB instance class : **db.t2.micro**.
-- Giữ nguyên tùy chọn cho mục **Storage**.
-
-![Database](/images/asg/004.png?width=90pc)
-
-5. Tiếp tục kéo màn hình xuống, mục **Connectivity**:
-
-- **Virtual private cloud (VPC)**: giữ nguyên VPC mặc định.
-- **Subnet group**: giữ nguyên Subnet group mặc định.
-- **Public access**: chọn **No**
-- **VPC security group**: Chọn **Choose existing**.
-- **Existing VPC security groups**: Chọn tên Security Group mà bạn đã tạo ở phần 1 (ví dụ: **sharenote-sg** và để nguyên **default** security group.)
-- **Availability Zone**: chọn **ap-southeast-1a**
-
-![Database](/images/asg/005.png?width=90pc)
-
-6. Kéo màn hình xuống và click để mở rộng mục **Additional configuration**.
-
-- Tại mục **Database options** phần **Initial database name**: Nhập vào tên của database sẽ được khởi tạo ban đầu (ví dụ: **NoteDB**)
-- Các phần còn lại, bạn hãy giữ nguyên mặc định.
-
-![Database](/images/asg/006.png?width=90pc)
-
-7. Kéo màn hình xuống cuối trang và click **Create database**.
-
-8. Database sẽ được khởi tạo và ở trạng thái **Creating**. Hãy đợi cho Status chuyển sang **Available** để có thể sử dụng.
-
-9. Click **sharenote-db** trong danh sách **Databases**.
-
-10. Ở trang thông tin database, tab **Connectivity & security**, ghi chú lại **Endpoint** của database. Chúng ta sẽ sử dụng thông tin này cho việc cấu hình ở bước kế tiếp.
-
-![Database](/images/asg/008.png?width=90pc)
-
-Trong bước này chúng ta đã hoàn thành việc tạo Database cho ShareNote, tiếp theo chúng ta sẽ tạo một EC2 instance để tiến hành cài đặt ứng dụng ShareNote.
+6.  Trong giao diện **Role details**:
+    - Đối với **Role name**, nhập `AWSLambdaRoleDefault`
+    - ![](/images/2/2/7.png)
+7.  Trong bước **Add permissions**:
+    - Xem lại ba chính sách
+    - Nhấp vào **Create role**
+8.  Chúng ta đã hoàn thành việc tạo IAM role
+    - ![](/images/2/2/8.png)

@@ -1,60 +1,60 @@
 +++
-title = "Create an S3 Bucket"
+title = "Tạo một S3 Bucket"
 date = 2020
 weight = 1
 chapter = false
 pre = "<b>3.1. </b>"
 +++
 
-## Download data
+## Tải dữ liệu
 
-1. Click on this: [Post data](https://jsonplaceholder.typicode.com/posts)
-2. Save with **Ctrl + S**
-3. Click on this: [Comment data](https://jsonplaceholder.typicode.com/comments)
-4. Save with **Ctrl + S**
-5. On the file **.json** you just downloaded, you can change the code to testing Clean Data Use Case
+1. Nhấp vào đây: [Dữ liệu bài đăng](https://jsonplaceholder.typicode.com/posts)
+2. Lưu với **Ctrl + S**
+3. Nhấp vào đây: [Dữ liệu bình luận](https://jsonplaceholder.typicode.com/comments)
+4. Lưu với **Ctrl + S**
+5. Trên tệp **.json** vừa tải xuống, bạn có thể thay đổi mã để kiểm tra trường hợp sử dụng Làm sạch dữ liệu
 
 {{% notice tip %}}
-You can modify the data for testing purposes: delete some records, set certain fields to null, or change the id or postId values from numbers to strings.  
+Bạn có thể sửa đổi dữ liệu cho mục đích kiểm tra: xóa một số bản ghi, đặt một số trường thành null, hoặc thay đổi giá trị id hoặc postId từ số thành chuỗi.  
 {{% /notice %}}
 
-## Create S3 Bucket
+## Tạo S3 Bucket
 
-1. Visit the [AWS Management Console](https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1)
+1. Truy cập [AWS Management Console](https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1)
 
-   - Search for **S3**
-   - Select **S3**
+   - Tìm kiếm **S3**
+   - Chọn **S3**
      ![](/images/3/1/0001-creates3bucket.png)
 
-2. In the **S3 interface**
+2. Trong **giao diện S3**
 
-   - Choose **buckets**
-   - Select **Create bucket**
+   - Chọn **buckets**
+   - Chọn **Create bucket**
      ![](/images/3/1/0002-creates3bucket.png)
 
-3. In the **Create bucket interface**
-   - For Bucket name, enter `datalake-demo-bucket`
+3. Trong **giao diện Create bucket**
+   - Đối với tên Bucket, nhập `datalake-demo-bucket`
      ![](/images/3/1/1.png)
-4. Click **Create bucket**
+4. Nhấp vào **Create bucket**
    ![](/images/3/1/2.png)
-5. Successfully created the bucket
+5. Đã tạo bucket thành công
 
-   - Select the newly created bucket
+   - Chọn bucket mới tạo
      ![](/images/3/1/3.png)
 
-6. In the new bucket interface
+6. Trong giao diện bucket mới
 
-   - Select **Create folder**
+   - Chọn **Create folder**
      ![](/images/3/1/4.png)
 
-7. In the **Create folder** interface
-   - For Folder name, enter `raw-data`
+7. Trong giao diện **Create folder**
+   - Đối với tên thư mục, nhập `raw-data`
      ![](/images/3/1/5.png)
-8. Successfully created the folder
+8. Đã tạo thư mục thành công
    ![](/images/3/1/6.png)
-9. At folder **raw-data**
+9. Tại thư mục **raw-data**
 
-- Create `post` and `comment` folders
+- Tạo các thư mục `post` và `comment`
   ![](/images/3/1/7.png)
 
-After successfully creating the 2 folders, we will not upload the files immediately but will proceed to the next step, which is **Creating the Lambda Function** to handle data cleaning
+Sau khi tạo thành công 2 thư mục, chúng ta sẽ không tải lên tệp ngay lập tức mà sẽ tiến hành bước tiếp theo, đó là **Tạo Lambda Function** để xử lý việc làm sạch dữ liệu

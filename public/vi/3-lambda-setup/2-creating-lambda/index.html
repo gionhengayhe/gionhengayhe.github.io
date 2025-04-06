@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.139.4">
@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Create Lambda function :: Data Lake trên AWS: Làm sạch dữ liệu với Lambda Triggers</title>
+    <title>Tạo Lambda function :: Data Lake trên AWS: Làm sạch dữ liệu với Lambda Triggers</title>
 
     
-    <link href="/css/nucleus.css?1734625545" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734625545" rel="stylesheet">
-    <link href="/css/hybrid.css?1734625545" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734625545" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734625545" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734625545" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734625545" rel="stylesheet">
-    <link href="/css/theme.css?1734625545" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734625545" rel="stylesheet">
+    <link href="/css/nucleus.css?1743941522" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1743941522" rel="stylesheet">
+    <link href="/css/hybrid.css?1743941522" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1743941522" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1743941522" rel="stylesheet">
+    <link href="/css/auto-complete.css?1743941522" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1743941522" rel="stylesheet">
+    <link href="/css/theme.css?1743941522" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1743941522" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734625545" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1743941522" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734625545"></script>
+    <script src="/js/jquery-3.3.1.min.js?1743941522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -84,14 +84,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734625545"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734625545"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1743941522"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1743941522"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734625545"></script>
+<script type="text/javascript" src="/js/search.js?1743941522"></script>
  
   </div>
 
@@ -117,7 +117,7 @@
            
 <li
   data-nav-id="/vi/2-preparation-steps/"
-  title="Preparation Steps"
+  title="Các bước chuẩn bị"
   class="dd-item 
         
         
@@ -125,7 +125,7 @@
         "
 >
   <a href="/vi/2-preparation-steps/">
-    <b>2. </b>Preparation Steps 
+    <b>2. </b>Các bước chuẩn bị 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -135,7 +135,7 @@
             
 <li
   data-nav-id="/vi/2-preparation-steps/1-glue-role/"
-  title="Giới thiệu"
+  title="Tạo Glue Service Role"
   class="dd-item 
         
         
@@ -143,7 +143,7 @@
         "
 >
   <a href="/vi/2-preparation-steps/1-glue-role/">
-    <b>2.1 </b>Giới thiệu 
+    <b>2.1 </b>Tạo Glue Service Role 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -153,7 +153,7 @@
             
 <li
   data-nav-id="/vi/2-preparation-steps/2-lambda-role/"
-  title="Tạo ShareNote Database"
+  title="Tạo Lambda role"
   class="dd-item 
         
         
@@ -161,7 +161,7 @@
         "
 >
   <a href="/vi/2-preparation-steps/2-lambda-role/">
-    <b>2.2 </b>Tạo ShareNote Database 
+    <b>2.2 </b>Tạo Lambda role 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -192,7 +192,7 @@
            
 <li
   data-nav-id="/vi/3-lambda-setup/"
-  title="Setup Data Processing Pipeline"
+  title="Thiết lập Pipeline Xử lý Dữ liệu"
   class="dd-item 
         parent
         
@@ -200,7 +200,7 @@
         "
 >
   <a href="/vi/3-lambda-setup/">
-    <b>3. </b>Setup Data Processing Pipeline 
+    <b>3. </b>Thiết lập Pipeline Xử lý Dữ liệu 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -210,7 +210,7 @@
             
 <li
   data-nav-id="/vi/3-lambda-setup/1-creating-bucket/"
-  title="Create an S3 Bucket"
+  title="Tạo một S3 Bucket"
   class="dd-item 
         
         
@@ -218,7 +218,7 @@
         "
 >
   <a href="/vi/3-lambda-setup/1-creating-bucket/">
-    <b>3.1. </b>Create an S3 Bucket 
+    <b>3.1. </b>Tạo một S3 Bucket 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -228,7 +228,7 @@
             
 <li
   data-nav-id="/vi/3-lambda-setup/2-creating-lambda/"
-  title="Create Lambda function"
+  title="Tạo Lambda function"
   class="dd-item 
         
         active
@@ -236,7 +236,7 @@
         "
 >
   <a href="/vi/3-lambda-setup/2-creating-lambda/">
-    <b>3.2. </b>Create Lambda function 
+    <b>3.2. </b>Tạo Lambda function 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -246,7 +246,7 @@
             
 <li
   data-nav-id="/vi/3-lambda-setup/3-creating-eventbridge/"
-  title="Setup EventBridge and S3 Trigger"
+  title="Thiết lập EventBridge và S3 Trigger"
   class="dd-item 
         
         
@@ -254,7 +254,7 @@
         "
 >
   <a href="/vi/3-lambda-setup/3-creating-eventbridge/">
-    <b>3.3 </b>Setup EventBridge and S3 Trigger 
+    <b>3.3 </b>Thiết lập EventBridge và S3 Trigger 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -264,7 +264,7 @@
             
 <li
   data-nav-id="/vi/3-lambda-setup/4-watch-result/"
-  title="Upload data and view the results"
+  title="Tải lên dữ liệu và xem kết quả"
   class="dd-item 
         
         
@@ -272,7 +272,7 @@
         "
 >
   <a href="/vi/3-lambda-setup/4-watch-result/">
-    <b>3.4 </b>Upload data and view the results 
+    <b>3.4 </b>Tải lên dữ liệu và xem kết quả 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -285,7 +285,7 @@
            
 <li
   data-nav-id="/vi/4-create-datalog/"
-  title="Create Data Catalog"
+  title="Tạo Data Catalog"
   class="dd-item 
         
         
@@ -293,7 +293,7 @@
         "
 >
   <a href="/vi/4-create-datalog/">
-    <b>4. </b>Create Data Catalog 
+    <b>4. </b>Tạo Data Catalog 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -302,16 +302,16 @@
           
             
 <li
-  data-nav-id="/vi/4-create-datalog/2-data-check/"
-  title="Data check"
+  data-nav-id="/vi/4-create-datalog/1-create-glue-crawler/"
+  title="Tạo AWS Glue Crawler"
   class="dd-item 
         
         
         
         "
 >
-  <a href="/vi/4-create-datalog/2-data-check/">
-    <b>4.2 </b>Data check 
+  <a href="/vi/4-create-datalog/1-create-glue-crawler/">
+    <b>4.1. </b>Tạo AWS Glue Crawler 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -320,16 +320,16 @@
     
             
 <li
-  data-nav-id="/vi/4-create-datalog/1-create-glue-crawler/"
-  title="Create AWS Glue Crawler"
+  data-nav-id="/vi/4-create-datalog/2-data-check/"
+  title="Kiểm tra dữ liệu"
   class="dd-item 
         
         
         
         "
 >
-  <a href="/vi/4-create-datalog/1-create-glue-crawler/">
-    <b>3. </b>Create AWS Glue Crawler 
+  <a href="/vi/4-create-datalog/2-data-check/">
+    <b>4.2 </b>Kiểm tra dữ liệu 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -342,7 +342,7 @@
            
 <li
   data-nav-id="/vi/5-data-transformation/"
-  title="Create Data Catalog"
+  title="Chuyển đổi dữ liệu"
   class="dd-item 
         
         
@@ -350,7 +350,7 @@
         "
 >
   <a href="/vi/5-data-transformation/">
-    <b>4. </b>Create Data Catalog 
+    <b>5. </b>Chuyển đổi dữ liệu 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -359,7 +359,7 @@
            
 <li
   data-nav-id="/vi/6-analysis-visualization/"
-  title="Create Data Catalog"
+  title="Phân tích và trực quan hóa"
   class="dd-item 
         
         
@@ -367,7 +367,7 @@
         "
 >
   <a href="/vi/6-analysis-visualization/">
-    <b>4. </b>Create Data Catalog 
+    <b>6. </b>Phân tích và trực quan hóa 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -377,7 +377,7 @@
             
 <li
   data-nav-id="/vi/6-analysis-visualization/1-analysis-athena/"
-  title="Analysis with Athena"
+  title="Phân tích với Athena"
   class="dd-item 
         
         
@@ -385,7 +385,7 @@
         "
 >
   <a href="/vi/6-analysis-visualization/1-analysis-athena/">
-    <b>6.1 </b>Analysis with Athena 
+    <b>6.1 </b>Phân tích với Athena 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -395,7 +395,7 @@
             
 <li
   data-nav-id="/vi/6-analysis-visualization/2-visualize-quicksight/"
-  title="Visualize with QuickSight"
+  title="Trực quan hóa với QuickSight"
   class="dd-item 
         
         
@@ -403,7 +403,7 @@
         "
 >
   <a href="/vi/6-analysis-visualization/2-visualize-quicksight/">
-    <b>6.2 </b>Visualize with QuickSight 
+    <b>6.2 </b>Trực quan hóa với QuickSight 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -416,7 +416,7 @@
            
 <li
   data-nav-id="/vi/7-clean-up/"
-  title="Clean up resources"
+  title="Dọn dẹp tài nguyên"
   class="dd-item 
         
         
@@ -424,7 +424,7 @@
         "
 >
   <a href="/vi/7-clean-up/">
-    <b>7. </b>Clean up resources 
+    <b>7. </b>Dọn dẹp tài nguyên 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -467,14 +467,14 @@
                        
                 <option
                   id="en"
-                  value="/3-lambda-setup/2-creating-lambda/"
+                  value="//localhost:1313/3-lambda-setup/2-creating-lambda/"
                 >
                   English
                 </option>
                             
                 <option
                   id="vi"
-                  value="/vi/3-lambda-setup/2-creating-lambda/"
+                  value="//localhost:1313/vi/3-lambda-setup/2-creating-lambda/"
                   selected
                 >
                   Tiếng Việt
@@ -576,7 +576,7 @@
             
           
           
-            <a href='/vi/'>Data Lake on AWS: Clean Data with Lambda Triggers</a> > <a href='/vi/3-lambda-setup/'>Setup Data Processing Pipeline</a> > Create Lambda function
+            <a href='/vi/'>Data Lake on AWS: Clean Data with Lambda Triggers</a> > <a href='/vi/3-lambda-setup/'>Thiết lập Pipeline Xử lý Dữ liệu</a> > Tạo Lambda function
           
         
           
@@ -591,10 +591,10 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li><a href="#creating-lambda-function">Creating lambda function</a>
+    <li><a href="#tạo-lambda-function">Tạo Lambda function</a>
       <ul>
-        <li><a href="#creating-lambda-function-for-post-data">Creating lambda function for post data</a></li>
-        <li><a href="#creating-lambda-function-for-comment-data">Creating lambda function for comment data</a></li>
+        <li><a href="#tạo-lambda-function-cho-dữ-liệu-bài-đăng">Tạo Lambda function cho dữ liệu bài đăng</a></li>
+        <li><a href="#tạo-lambda-function-cho-dữ-liệu-bình-luận">Tạo Lambda function cho dữ liệu bình luận</a></li>
       </ul>
     </li>
   </ul>
@@ -614,7 +614,7 @@
           
             <h1>
               
-              Create Lambda function
+              Tạo Lambda function
             </h1>
           
 
@@ -622,40 +622,40 @@
 
 
 
-	<h2 id="creating-lambda-function">Creating lambda function</h2>
-<h3 id="creating-lambda-function-for-post-data">Creating lambda function for post data</h3>
+	<h2 id="tạo-lambda-function">Tạo Lambda function</h2>
+<h3 id="tạo-lambda-function-cho-dữ-liệu-bài-đăng">Tạo Lambda function cho dữ liệu bài đăng</h3>
 <ol>
 <li>
-<p>Access the <a href="https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1">AWS Management Console</a></p>
+<p>Truy cập <a href="https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1">AWS Management Console</a></p>
 <ul>
-<li>Search for <strong>Lambda</strong></li>
-<li>Select <strong>Lambda</strong>
+<li>Tìm kiếm <strong>Lambda</strong></li>
+<li>Chọn <strong>Lambda</strong>
 <img src="/images/3/2/1.png" alt=""></li>
 </ul>
 </li>
 <li>
-<p>Choose <strong>Create a function</strong>
+<p>Chọn <strong>Create a function</strong>
 <img src="/images/3/2/2.png" alt=""></p>
 </li>
 <li>
-<p>At function name: <code>Clean-PostData</code></p>
+<p>Tại function name: <code>Clean-PostData</code></p>
 </li>
 <li>
-<p>At runtime, choose <strong>Python 3.13</strong>
+<p>Tại runtime, chọn <strong>Python 3.13</strong>
 <img src="/images/3/2/3.png" alt=""></p>
 </li>
 <li>
-<p>Change default execution role, choose <strong>Use an existing role</strong></p>
+<p>Thay đổi execution role mặc định, chọn <strong>Use an existing role</strong></p>
 </li>
 <li>
-<p>Choose <strong>AWSLambdaRoleDefault</strong></p>
+<p>Chọn <strong>AWSLambdaRoleDefault</strong></p>
 </li>
 <li>
-<p>Click <strong>Create function</strong>
+<p>Nhấp vào <strong>Create function</strong>
 <img src="/images/3/2/4.png" alt=""></p>
 </li>
 <li>
-<p>Add this code</p>
+<p>Thêm mã này</p>
 </li>
 </ol>
 <pre tabindex="0"><code>import json
@@ -663,7 +663,7 @@ import boto3
 
 def lambda_handler(event, context):
 try:
-bucket_name = event[&#39;detail][&#39;bucket&#39;][&#39;name&#39;]
+bucket_name = event[&#39;detail&#39;][&#39;bucket&#39;][&#39;name&#39;]
 file_key = event[&#39;detail&#39;][&#39;object&#39;][&#39;key&#39;]
 
 response = s3.get_object(Bucket=bucket_name, Key=file_key)
@@ -679,7 +679,7 @@ for post in posts:
    isinstance(post.get(&#39;body&#39;), str) and
    cleaned_data.append(post))
 
-cleaned_file_key = file_key.replace(&#39;raw-data/post&#39;, &#39;cleaned-data&#39;/post)
+cleaned_file_key = file_key.replace(&#39;raw-data/post&#39;, &#39;cleaned-data/post&#39;)
 cleaned_file_content = &#34;\n&#34;.join(json.dumps(post) for post in cleaned_data)
 
 s3.put_object(Bucket=bucket_name, Key=cleaned_file_key, Body=cleaned_file_content)
@@ -689,25 +689,25 @@ except Exception as e:
 print(f&#34;Error processing file {file_key}: {e}&#34;)
 raise e
 </code></pre>
-<div class="notices note" ><p>Because AWS Glue cannot interpret JSON Array as JSON Objects for schema mapping, we need to convert the data into JSON Object format.<br>
-This code will check the incoming data, and if the data line is not in the correct format, it will skip that data.<br>
-<code>userId</code> must be an integer.<br>
-<code>id</code> must be an integer.<br>
-<code>title</code> must be a string.<br>
-<code>body</code> must be a string.</p>
+<div class="notices note" ><p>Vì AWS Glue không thể diễn giải JSON Array như JSON Objects để ánh xạ lược đồ, chúng ta cần chuyển đổi dữ liệu thành định dạng JSON Object.<br>
+Mã này sẽ kiểm tra dữ liệu đến, và nếu dòng dữ liệu không ở định dạng chính xác, nó sẽ bỏ qua dữ liệu đó.<br>
+<code>userId</code> phải là số nguyên.<br>
+<code>id</code> phải là số nguyên.<br>
+<code>title</code> phải là một chuỗi.<br>
+<code>body</code> phải là một chuỗi.</p>
 </div>
 
 <ol>
-<li>Click <strong>Deploy(Ctrl+Shift+U)</strong>
+<li>Nhấp vào <strong>Deploy(Ctrl+Shift+U)</strong>
 <img src="/images/3/2/5.png" alt=""></li>
 </ol>
-<h3 id="creating-lambda-function-for-comment-data">Creating lambda function for comment data</h3>
+<h3 id="tạo-lambda-function-cho-dữ-liệu-bình-luận">Tạo Lambda function cho dữ liệu bình luận</h3>
 <ol>
 <li>
-<p>Simirlar to <strong>Creating lambda function for post data</strong>, create a <strong>Lambda Function</strong> <code>Clean-CommentData</code></p>
+<p>Tương tự như <strong>Tạo Lambda function cho dữ liệu bài đăng</strong>, tạo một <strong>Lambda Function</strong> <code>Clean-CommentData</code></p>
 </li>
 <li>
-<p>Using this code:</p>
+<p>Sử dụng mã này:</p>
 </li>
 </ol>
 <pre tabindex="0"><code>import json
@@ -715,7 +715,7 @@ import boto3
 
 def lambda_handler(event, context):
    try:
-	bucket_name = event[&#39;detail][&#39;bucket&#39;][&#39;name&#39;]
+	bucket_name = event[&#39;detail&#39;][&#39;bucket&#39;][&#39;name&#39;]
 	file_key = event[&#39;detail&#39;][&#39;object&#39;][&#39;key&#39;]
 
 	response = s3.get_object(Bucket=bucket_name, Key=file_key)
@@ -732,7 +732,7 @@ def lambda_handler(event, context):
 		  isinstance(post.get(&#39;body&#39;), str) and
 		  cleaned_data.append(post))
 
-	cleaned_file_key = file_key.replace(&#39;raw-data/comment&#39;, &#39;cleaned-data&#39;/comment)
+	cleaned_file_key = file_key.replace(&#39;raw-data/comment&#39;, &#39;cleaned-data/comment&#39;)
 	cleaned_file_content = &#34;\n&#34;.join(json.dumps(comment) for post in cleaned_data)
 
 	s3.put_object(Bucket=bucket_name, Key=cleaned_file_key, Body=cleaned_file_content)
@@ -1092,10 +1092,10 @@ def lambda_handler(event, context):
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/3-lambda-setup/1-creating-bucket/" title="Create an S3 Bucket"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/3-lambda-setup/1-creating-bucket/" title="Tạo một S3 Bucket"> <i class="fa fa-chevron-left"></i></a>
 		
 		
-			<a class="nav nav-next" href="/vi/3-lambda-setup/3-creating-eventbridge/" title="Setup EventBridge and S3 Trigger" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+			<a class="nav nav-next" href="/vi/3-lambda-setup/3-creating-eventbridge/" title="Thiết lập EventBridge và S3 Trigger" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
 		
 	
     </div>
@@ -1105,19 +1105,19 @@ def lambda_handler(event, context):
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734625545"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734625545"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734625545"></script>
-    <script src="/js/jquery.sticky.js?1734625545"></script>
-    <script src="/js/featherlight.min.js?1734625545"></script>
-    <script src="/js/highlight.pack.js?1734625545"></script>
+    <script src="/js/clipboard.min.js?1743941522"></script>
+    <script src="/js/perfect-scrollbar.min.js?1743941522"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1743941522"></script>
+    <script src="/js/jquery.sticky.js?1743941522"></script>
+    <script src="/js/featherlight.min.js?1743941522"></script>
+    <script src="/js/highlight.pack.js?1743941522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734625545"></script>
-    <script src="/js/learn.js?1734625545"></script>
-    <script src="/js/hugo-learn.js?1734625545"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1743941522"></script>
+    <script src="/js/learn.js?1743941522"></script>
+    <script src="/js/hugo-learn.js?1743941522"></script>
 
-    <link href="/mermaid/mermaid.css?1734625545" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734625545"></script>
+    <link href="/mermaid/mermaid.css?1743941522" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1743941522"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

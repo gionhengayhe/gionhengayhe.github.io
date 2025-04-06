@@ -1,45 +1,45 @@
 +++
-title = "Create AWS Glue Crawler"
+title = "Tạo AWS Glue Crawler"
 date = 2020
-weight = 3
+weight = 1
 chapter = false
-pre = "<b>3. </b>"
+pre = "<b>4.1. </b>"
 +++
 
-### Create Glue Crawler
+### Tạo Glue Crawler
 
-1. Access the [AWS Management Console](https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1)
-   - Find **AWS Glue**.
-   - Select **AWS Glue**.
+1. Truy cập [AWS Management Console](https://us-east-1.console.aws.amazon.com/console/home?region=us-east-1)
+   - Tìm **AWS Glue**.
+   - Chọn **AWS Glue**.
      ![](/images/4/1/1.png)
-2. In the **AWS Glue** interface, select **Crawlers**.
-3. Choose Create Crawler.
+2. Trong giao diện **AWS Glue**, chọn **Crawlers**.
+3. Chọn Create Crawler.
    ![](/images/4/1/2.png)
-4. In the **Add Crawler** interface, enter **Crawler name** as `summitcrawler` and select **Next**.
+4. Trong giao diện **Add Crawler**, nhập **Crawler name** là `summitcrawler` và chọn **Next**.
    ![](/images/4/1/3.png)
-5. For Add data source, select S3.
-6. Choose **S3** path through **Browse**. Choose: **datalate-bucket-demo/cleaned-data**. Also, select **Crawl new sub-folders only** and **Add an S3 data source**.
-7. After adding the data source, select **Next**.
+5. Đối với Add data source, chọn S3.
+6. Chọn đường dẫn **S3** thông qua **Browse**. Chọn: **datalate-bucket-demo/cleaned-data**. Đồng thời, chọn **Crawl new sub-folders only** và **Add an S3 data source**.
+7. Sau khi thêm nguồn dữ liệu, chọn **Next**.
    ![](/images/4/1/4.png)
-8. For **IAM role**, choose **AWSGlueServiceDefault**. Then, select **Next**.
+8. Đối với **IAM role**, chọn **AWSGlueServiceDefault**. Sau đó, chọn **Next**.
    ![](/images/4/1/5.png)
-9. For **Target database**, perform **Add database**.
+9. Đối với **Target database**, thực hiện **Add database**.
    ![](/images/4/1/6.png)
-10. Create a database by entering the database name as `summitdb` and selecting **Create database**.
+10. Tạo cơ sở dữ liệu bằng cách nhập tên cơ sở dữ liệu là `summitdb` và chọn **Create database**.
     ![](/images/4/1/7.png)
-11. After creating the database, select the database and choose **Next**.
+11. Sau khi tạo cơ sở dữ liệu, chọn cơ sở dữ liệu và chọn **Next**.
     ![](/images/4/1/9.png)
-12. Review the configuration and select **Create crawler**.
+12. Xem lại cấu hình và chọn **Create crawler**.
     ![](/images/4/1/10.png)
-13. Crawler creation successful. Then, choose **Run crawler**.
+13. Tạo crawler thành công. Sau đó, chọn **Run crawler**.
     ![](/images/4/1/11.png)
-14. It takes about 2-3 minutes to run the crawler.
-15. When you see the crawler status as **Ready**.
+14. Mất khoảng 2-3 phút để chạy crawler.
+15. Khi bạn thấy trạng thái crawler là **Ready**.
     ![](/images/4/1/12.png)
-16. In the **AWS Glue** interface, select **Table**, and you will see 2 data tables.
+16. Trong giao diện **AWS Glue**, chọn **Table**, và bạn sẽ thấy 2 bảng dữ liệu.
     ![](/images/4/1/13.png)
-17. Select the **post** data table.
+17. Chọn bảng dữ liệu **post**.
     ![](/images/4/1/14.png)
-18. Select the **comment** data table.
+18. Chọn bảng dữ liệu **comment**.
     ![](/images/4/1/14.png)
-19. Explore the details of the data table.
+19. Khám phá chi tiết của bảng dữ liệu.

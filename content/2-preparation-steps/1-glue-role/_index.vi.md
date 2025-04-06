@@ -1,52 +1,53 @@
 +++
-title = "Giới thiệu"
-date = 2024
+title = "Tạo Glue Service Role"
+date = 2020
 weight = 1
 chapter = false
 pre = "<b>2.1 </b>"
 +++
 
-Chúng ta sẽ bắt đầu bằng việc tạo một Security Group cần thiết cho bài lab này.
+## Tạo Glue Service Role
 
-Để xác định các rule Inbound cần có, chúng ta liệt kê ra các yêu cầu như sau:
+Trong bước này, chúng ta sẽ điều hướng đến IAM Console và tạo một role cho dịch vụ Glue. Role này sẽ cho phép AWS Glue truy cập dữ liệu trong S3 và tạo các đối tượng cần thiết trong Glue Catalog.
 
-- Người dùng truy cập từ ngoài vào ứng dụng ShareNote thông qua cổng **80** bằng giao thức **HTTP** với **Source IP bất kì**.
-- Load Balancer sẽ điều phối các yêu cầu này đến các server thông qua cổng **8080** với **Source IP trong VPC**.
-- Các Application server sẽ giao tiếp với Database thông qua cổng **3306** với Source IP trong VPC.
-- Chúng ta sẽ mở truy cập **SSH** để có thể kết nối đến instance để triển khai ứng dụng.
+1.  Truy cập [AWS Management Console]()
 
-{{% notice note %}}
-Trên thực tế, chúng ta nên tạo các security group riêng biệt cho từng thành phần. Tuy nhiên trong khuôn khổ bài thực hành này, chúng ta sẽ sử dụng một security group (Các rule không trùng lẫn nhau).
-{{% /notice %}}
+    - Tìm kiếm **IAM**
+    - Chọn **IAM**
+      ![Step1](/images/2/0001-createiamrole.png)
 
-#### Tạo Security Group
+2.  Trong console **IAM**:
 
-1. Truy cập vào **EC2 Management Console** bằng cách gõ và chọn dịch vụ **EC2** trong thanh tìm kiếm.
+    - Chọn **Roles**
+    - Chọn **Create role**
+      ![](/images/2/0002-createiamrole.png)
 
-![Find EC2](/images/1/1.1_FindEC2.png?width=90pc)
+3.  Trong bước **Select trusted entity**:
 
-2. Ở thanh điều hướng bên trái, click chọn **Security Groups**.
-3. Ở trang **Security Groups**, click chọn **Create Security Group**.
-4. Ở trang **Create security group**, thiết lập các thông số như sau:
-   - Mục **Basic details**:
-     - Security group name: Nhập vào tên security group (VD: **sharenote-sg**)
-     - Description: Nhập vào diễn giải của security group. (VD: **Security for Sharenote app** )
-     - VPC: Chọn Default VPC. _Bạn sẽ xây dựng bài lab này bên trong Default VPC_.
+    - Chọn **AWS Service**
+    - Đối với **Use case**, chọn **Glue**
+    - Nhấp vào **Next**
+    - ![](/images/2/0003-createiamrole.png)
 
-{{% notice note %}}
-Trên thực tế, AWS khuyến cáo rằng bạn không không nên sử dụng Default VPC cho mục dích chạy môi trường Production. Tuy nhiên, bạn sẽ sử dụng Default VPC để được thuận tiện trong bài thực hành này.
-{{% /notice %}}
+4.  Trong bước **Add permissions**:
 
-- Mục **Inbound rules**: Thêm các **Inbound rule** như đề cập ở trên. Chọn **Add rule** để thêm một rule.
-  - Type: **HTTP** | Source: **Anywhere-IPv4**
-  - Type: **Custom TCP** | Port range: **8080** | Source: **Anywhere-IPv4**
-  - Type: **MySQL/Aurora** | Source: Custom **172.31.0.0/16** (Default VPC CIDR block)
-  - Type: **SSH** | Source: **My IP**
+    - Tìm kiếm chính sách **AmazonS3FullAccess**
+    - Chọn chính sách **AmazonS3FullAccess**
+    - Nhấp vào Next
+    - ![](/images/2/0004-createiamrole.png)
 
-5. Chọn **Create security group**.
+5.  Tương tự như bước 4:
 
-- Kiểm tra Security group đã được tạo thành công.
+    - Tìm kiếm chính sách **AWSGlueServiceRole**
+    - Chọn chính sách **AWSGlueServiceRole**
+    - ![](/images/2/0005-createiamrole.png)
 
-![Security Group](/images/asg/001.png?width=90pc)
-
-Đến đây, chúng ta đã hoàn thành việc tạo Security Group, tiếp theo chúng ta sẽ tiến hành tạo ShareNote Database.
+6.  Trong giao diện **Role details**:
+    - Đối với **Role name**, nhập `AWSGlueServiceRoleDefault`
+    - ![](/images/2/0006-createiamrole.png)
+7.  Trong bước **Add permissions**:
+    - Xem lại hai chính sách
+    - Nhấp vào **Create role**
+    - ![](/images/2/0007-createiamrole.png)
+8.  Chúng ta đã hoàn thành việc tạo IAM role
+    - ![](/images/2/0008-createiamrole.png)

@@ -1,16 +1,16 @@
 +++
-title = "Setup Data Processing Pipeline"
+title = "Thiết lập Pipeline Xử lý Dữ liệu"
 date = 2020
 weight = 3
 chapter = false
 pre = "<b>3. </b>"
 +++
 
-### Setup Data Processing Pipeline
+### Thiết lập Pipeline Xử lý Dữ liệu
 
-### Steps:
+### Các bước:
 
-- [3.1. Create an S3 Bucket](../3-lambda-setup/1-creating-bucket/_index.md)
-- [3.2. Create Lambda Function](../3-lambda-setup/2-creating-lambda/_index.md)
-- [3.3. Setup EventBridge and S3 Trigger](../3-lambda-setup/3-creating-eventbridge/_index.md)
-- [3.4. Upload data and view the results](../3-lambda-setup/4-watch-result/_index.md)
+- [3.1. Tạo một S3 Bucket](../3-lambda-setup/1-creating-bucket/_index.vi.md)
+- [3.2. Tạo Lambda Function](../3-lambda-setup/2-creating-lambda/_index.vi.md)
+- [3.3. Thiết lập EventBridge và S3 Trigger](../3-lambda-setup/3-creating-eventbridge/_index.vi.md)
+- [3.4. Tải lên dữ liệu và xem kết quả](../3-lambda-setup/4-watch-result/_index.vi.md)

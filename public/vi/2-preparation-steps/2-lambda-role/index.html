@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="generator" content="Hugo 0.139.4">
@@ -9,24 +9,24 @@
 
     <link rel="icon" href="/images/favicon.png" type="image/png">
 
-    <title>Tạo ShareNote Database :: Data Lake trên AWS: Làm sạch dữ liệu với Lambda Triggers</title>
+    <title>Tạo Lambda role :: Data Lake trên AWS: Làm sạch dữ liệu với Lambda Triggers</title>
 
     
-    <link href="/css/nucleus.css?1734625545" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1734625545" rel="stylesheet">
-    <link href="/css/hybrid.css?1734625545" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1734625545" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1734625545" rel="stylesheet">
-    <link href="/css/auto-complete.css?1734625545" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1734625545" rel="stylesheet">
-    <link href="/css/theme.css?1734625545" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1734625545" rel="stylesheet">
+    <link href="/css/nucleus.css?1743941522" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1743941522" rel="stylesheet">
+    <link href="/css/hybrid.css?1743941522" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1743941522" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1743941522" rel="stylesheet">
+    <link href="/css/auto-complete.css?1743941522" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1743941522" rel="stylesheet">
+    <link href="/css/theme.css?1743941522" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1743941522" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1734625545" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1743941522" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1734625545"></script>
+    <script src="/js/jquery-3.3.1.min.js?1743941522"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -84,14 +84,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1734625545"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1734625545"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1743941522"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1743941522"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1734625545"></script>
+<script type="text/javascript" src="/js/search.js?1743941522"></script>
  
   </div>
 
@@ -117,7 +117,7 @@
            
 <li
   data-nav-id="/vi/2-preparation-steps/"
-  title="Preparation Steps"
+  title="Các bước chuẩn bị"
   class="dd-item 
         parent
         
@@ -125,7 +125,7 @@
         "
 >
   <a href="/vi/2-preparation-steps/">
-    <b>2. </b>Preparation Steps 
+    <b>2. </b>Các bước chuẩn bị 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -135,7 +135,7 @@
             
 <li
   data-nav-id="/vi/2-preparation-steps/1-glue-role/"
-  title="Giới thiệu"
+  title="Tạo Glue Service Role"
   class="dd-item 
         
         
@@ -143,7 +143,7 @@
         "
 >
   <a href="/vi/2-preparation-steps/1-glue-role/">
-    <b>2.1 </b>Giới thiệu 
+    <b>2.1 </b>Tạo Glue Service Role 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -153,7 +153,7 @@
             
 <li
   data-nav-id="/vi/2-preparation-steps/2-lambda-role/"
-  title="Tạo ShareNote Database"
+  title="Tạo Lambda role"
   class="dd-item 
         
         active
@@ -161,7 +161,7 @@
         "
 >
   <a href="/vi/2-preparation-steps/2-lambda-role/">
-    <b>2.2 </b>Tạo ShareNote Database 
+    <b>2.2 </b>Tạo Lambda role 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -192,7 +192,7 @@
            
 <li
   data-nav-id="/vi/3-lambda-setup/"
-  title="Setup Data Processing Pipeline"
+  title="Thiết lập Pipeline Xử lý Dữ liệu"
   class="dd-item 
         
         
@@ -200,7 +200,7 @@
         "
 >
   <a href="/vi/3-lambda-setup/">
-    <b>3. </b>Setup Data Processing Pipeline 
+    <b>3. </b>Thiết lập Pipeline Xử lý Dữ liệu 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -210,7 +210,7 @@
             
 <li
   data-nav-id="/vi/3-lambda-setup/1-creating-bucket/"
-  title="Create an S3 Bucket"
+  title="Tạo một S3 Bucket"
   class="dd-item 
         
         
@@ -218,7 +218,7 @@
         "
 >
   <a href="/vi/3-lambda-setup/1-creating-bucket/">
-    <b>3.1. </b>Create an S3 Bucket 
+    <b>3.1. </b>Tạo một S3 Bucket 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -228,7 +228,7 @@
             
 <li
   data-nav-id="/vi/3-lambda-setup/2-creating-lambda/"
-  title="Create Lambda function"
+  title="Tạo Lambda function"
   class="dd-item 
         
         
@@ -236,7 +236,7 @@
         "
 >
   <a href="/vi/3-lambda-setup/2-creating-lambda/">
-    <b>3.2. </b>Create Lambda function 
+    <b>3.2. </b>Tạo Lambda function 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -246,7 +246,7 @@
             
 <li
   data-nav-id="/vi/3-lambda-setup/3-creating-eventbridge/"
-  title="Setup EventBridge and S3 Trigger"
+  title="Thiết lập EventBridge và S3 Trigger"
   class="dd-item 
         
         
@@ -254,7 +254,7 @@
         "
 >
   <a href="/vi/3-lambda-setup/3-creating-eventbridge/">
-    <b>3.3 </b>Setup EventBridge and S3 Trigger 
+    <b>3.3 </b>Thiết lập EventBridge và S3 Trigger 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -264,7 +264,7 @@
             
 <li
   data-nav-id="/vi/3-lambda-setup/4-watch-result/"
-  title="Upload data and view the results"
+  title="Tải lên dữ liệu và xem kết quả"
   class="dd-item 
         
         
@@ -272,7 +272,7 @@
         "
 >
   <a href="/vi/3-lambda-setup/4-watch-result/">
-    <b>3.4 </b>Upload data and view the results 
+    <b>3.4 </b>Tải lên dữ liệu và xem kết quả 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -285,7 +285,7 @@
            
 <li
   data-nav-id="/vi/4-create-datalog/"
-  title="Create Data Catalog"
+  title="Tạo Data Catalog"
   class="dd-item 
         
         
@@ -293,7 +293,7 @@
         "
 >
   <a href="/vi/4-create-datalog/">
-    <b>4. </b>Create Data Catalog 
+    <b>4. </b>Tạo Data Catalog 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -302,16 +302,16 @@
           
             
 <li
-  data-nav-id="/vi/4-create-datalog/2-data-check/"
-  title="Data check"
+  data-nav-id="/vi/4-create-datalog/1-create-glue-crawler/"
+  title="Tạo AWS Glue Crawler"
   class="dd-item 
         
         
         
         "
 >
-  <a href="/vi/4-create-datalog/2-data-check/">
-    <b>4.2 </b>Data check 
+  <a href="/vi/4-create-datalog/1-create-glue-crawler/">
+    <b>4.1. </b>Tạo AWS Glue Crawler 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -320,16 +320,16 @@
     
             
 <li
-  data-nav-id="/vi/4-create-datalog/1-create-glue-crawler/"
-  title="Create AWS Glue Crawler"
+  data-nav-id="/vi/4-create-datalog/2-data-check/"
+  title="Kiểm tra dữ liệu"
   class="dd-item 
         
         
         
         "
 >
-  <a href="/vi/4-create-datalog/1-create-glue-crawler/">
-    <b>3. </b>Create AWS Glue Crawler 
+  <a href="/vi/4-create-datalog/2-data-check/">
+    <b>4.2 </b>Kiểm tra dữ liệu 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -342,7 +342,7 @@
            
 <li
   data-nav-id="/vi/5-data-transformation/"
-  title="Create Data Catalog"
+  title="Chuyển đổi dữ liệu"
   class="dd-item 
         
         
@@ -350,7 +350,7 @@
         "
 >
   <a href="/vi/5-data-transformation/">
-    <b>4. </b>Create Data Catalog 
+    <b>5. </b>Chuyển đổi dữ liệu 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -359,7 +359,7 @@
            
 <li
   data-nav-id="/vi/6-analysis-visualization/"
-  title="Create Data Catalog"
+  title="Phân tích và trực quan hóa"
   class="dd-item 
         
         
@@ -367,7 +367,7 @@
         "
 >
   <a href="/vi/6-analysis-visualization/">
-    <b>4. </b>Create Data Catalog 
+    <b>6. </b>Phân tích và trực quan hóa 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -377,7 +377,7 @@
             
 <li
   data-nav-id="/vi/6-analysis-visualization/1-analysis-athena/"
-  title="Analysis with Athena"
+  title="Phân tích với Athena"
   class="dd-item 
         
         
@@ -385,7 +385,7 @@
         "
 >
   <a href="/vi/6-analysis-visualization/1-analysis-athena/">
-    <b>6.1 </b>Analysis with Athena 
+    <b>6.1 </b>Phân tích với Athena 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -395,7 +395,7 @@
             
 <li
   data-nav-id="/vi/6-analysis-visualization/2-visualize-quicksight/"
-  title="Visualize with QuickSight"
+  title="Trực quan hóa với QuickSight"
   class="dd-item 
         
         
@@ -403,7 +403,7 @@
         "
 >
   <a href="/vi/6-analysis-visualization/2-visualize-quicksight/">
-    <b>6.2 </b>Visualize with QuickSight 
+    <b>6.2 </b>Trực quan hóa với QuickSight 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -416,7 +416,7 @@
            
 <li
   data-nav-id="/vi/7-clean-up/"
-  title="Clean up resources"
+  title="Dọn dẹp tài nguyên"
   class="dd-item 
         
         
@@ -424,7 +424,7 @@
         "
 >
   <a href="/vi/7-clean-up/">
-    <b>7. </b>Clean up resources 
+    <b>7. </b>Dọn dẹp tài nguyên 
     <i class="fas fa-check read-icon"></i>
     
   </a>
@@ -467,14 +467,14 @@
                        
                 <option
                   id="en"
-                  value="/2-preparation-steps/2-lambda-role/"
+                  value="//localhost:1313/2-preparation-steps/2-lambda-role/"
                 >
                   English
                 </option>
                             
                 <option
                   id="vi"
-                  value="/vi/2-preparation-steps/2-lambda-role/"
+                  value="//localhost:1313/vi/2-preparation-steps/2-lambda-role/"
                   selected
                 >
                   Tiếng Việt
@@ -576,7 +576,7 @@
             
           
           
-            <a href='/vi/'>Data Lake on AWS: Clean Data with Lambda Triggers</a> > <a href='/vi/2-preparation-steps/'>Preparation Steps</a> > Tạo ShareNote Database
+            <a href='/vi/'>Data Lake on AWS: Clean Data with Lambda Triggers</a> > <a href='/vi/2-preparation-steps/'>Các bước chuẩn bị</a> > Tạo Lambda role
           
         
           
@@ -591,11 +591,7 @@
     <div class="wrapper">
 <nav id="TableOfContents">
   <ul>
-    <li>
-      <ul>
-        <li></li>
-      </ul>
-    </li>
+    <li><a href="#tạo-glue-service-role">Tạo Glue Service Role</a></li>
   </ul>
 </nav>
     </div>
@@ -613,7 +609,7 @@
           
             <h1>
               
-              Tạo ShareNote Database
+              Tạo Lambda role
             </h1>
           
 
@@ -621,95 +617,85 @@
 
 
 
-	<p>Ở bước này, chúng ta sẽ khởi tạo một cơ sở dữ liệu (<em>database</em>) sử dụng AWS RDS cho ứng dụng ShareNote được triển khai ở bước tiếp theo.</p>
-<h4 id="tạo-cơ-sở-dữ-liệu-cho-sharenote-với-aws-rds">Tạo cơ sở dữ liệu cho ShareNote với AWS RDS</h4>
+	<h2 id="tạo-glue-service-role">Tạo Glue Service Role</h2>
+<p>Trong bước này, chúng ta sẽ điều hướng đến IAM Console và tạo một role cho dịch vụ Lambda function. Role này sẽ cho phép Lambda function truy cập dữ liệu trong S3, làm sạch dữ liệu và tạo các đối tượng cần thiết trong Lambda Catalog.</p>
 <ol>
-<li>Truy cập vào <strong>RDS Management Console</strong> bằng cách gõ và chọn <em>RDS</em> trong thanh tìm kiếm.</li>
-<li>Chọn <strong>Create database</strong>.</li>
-<li>Lựa chọn các thông số thiết lập sau cho Database: (<strong>Các thông số không được nhắc đến sẽ giữ ở thiết lập mặc định</strong>).
+<li>
+<p>Truy cập <a href="">AWS Management Console</a></p>
 <ul>
-<li>Mục <strong>Choose a database creation method</strong>: Chọn <strong>Standard create</strong>.</li>
-<li>Mục <strong>Engine options</strong>: Chọn <strong>MySQL</strong>.</li>
+<li>Tìm kiếm <strong>IAM</strong></li>
+<li>Chọn <strong>IAM</strong>
+<img src="/images/2/0001-createiamrole.png" alt="Step1"></li>
+</ul>
+</li>
+<li>
+<p>Trong console <strong>IAM</strong>:</p>
+<ul>
+<li>Chọn <strong>Roles</strong></li>
+<li>Chọn <strong>Create role</strong>
+<img src="/images/2/0002-createiamrole.png" alt=""></li>
+</ul>
+</li>
+<li>
+<p>Trong bước <strong>Select trusted entity</strong>:</p>
+<ul>
+<li>Chọn <strong>AWS Service</strong></li>
+<li>Đối với <strong>Use case</strong>, chọn <strong>Lambda</strong></li>
+<li>Nhấp vào <strong>Next</strong></li>
+<li><img src="/images/2/2/3.png" alt=""></li>
+</ul>
+</li>
+<li>
+<p>Trong bước <strong>Add permissions</strong>:</p>
+<ul>
+<li>Tìm kiếm chính sách <strong>AmazonS3FullAccess</strong></li>
+<li>Chọn chính sách <strong>AmazonS3FullAccess</strong></li>
+<li>Nhấp vào Next</li>
+<li><img src="/images/2/0004-createiamrole.png" alt=""></li>
+</ul>
+</li>
+<li>
+<p>Tương tự như bước 4:</p>
+<ul>
+<li>Tìm kiếm chính sách <strong>AWSLambda_FullAccess</strong></li>
+<li>Chọn chính sách <strong>AWSLambda_FullAccess</strong></li>
+<li>
+<table>
+  <thead>
+      <tr>
+          <th><img src="/images/2/2/5.png" alt=""></th>
+      </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</li>
+<li>Tìm kiếm chính sách <strong>AWSLambdaBasicExecutionRole</strong></li>
+<li>Chọn chính sách <strong>AWSLambdaBasicExecutionRole</strong></li>
+<li><img src="/images/2/2/6.png" alt=""></li>
+</ul>
+</li>
+<li>
+<p>Trong giao diện <strong>Role details</strong>:</p>
+<ul>
+<li>Đối với <strong>Role name</strong>, nhập <code>AWSLambdaRoleDefault</code></li>
+<li><img src="/images/2/2/7.png" alt=""></li>
+</ul>
+</li>
+<li>
+<p>Trong bước <strong>Add permissions</strong>:</p>
+<ul>
+<li>Xem lại ba chính sách</li>
+<li>Nhấp vào <strong>Create role</strong></li>
+</ul>
+</li>
+<li>
+<p>Chúng ta đã hoàn thành việc tạo IAM role</p>
+<ul>
+<li><img src="/images/2/2/8.png" alt=""></li>
 </ul>
 </li>
 </ol>
-<p><img src="/images/asg/002.png?width=90pc" alt="ChooseDatabase"></p>
-
-<div class="notices info" ><p>Ứng dụng ShareNote sử dụng MySQL nên chúng ta cũng sẽ lựa chọn MySQL Engine.</p>
-</div>
-
-<ul>
-<li>Kéo màn hình xuống dưới, mục <strong>Templates</strong>: Chọn <strong>Free tier</strong>.</li>
-</ul>
-<p><img src="/images/1/2_Templates.png?width=90pc" alt="ChooseTemplates"></p>
-<ul>
-<li>
-<p>Mục <strong>Settings</strong>:</p>
-<ul>
-<li>
-<p><strong>DB instance identifier</strong>: nhập tên cho DB Instance (ví dụ: <strong>sharenote-db</strong>)</p>
-</li>
-<li>
-<p><strong>Settings</strong>:</p>
-<ul>
-<li><strong>Master username</strong>: thiết lập tài khoản master dùng để truy cập vào cơ sở dữ liệu (ví dụ: <strong>admin</strong>).</li>
-<li><strong>Master password</strong>: thiết lập mật khẩu với ít nhất 8 kí tự và <strong>hạn chế</strong> nhập kí tự đặc biệt (ví dụ: <strong>admin123</strong>).</li>
-<li><strong>Confirm password</strong>: Nhập lại mật khẩu ở phía trên.</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-<div class="notices tip" ><p>Nếu bạn nhập kí tự đặc biệt (ví dụ: ! hoặc @ hoặc #), khi bạn kết nối tới cơ sở dữ liệu trên DB Instance từ EC2 Instance sử dụng hệ điều hành <strong>Ubuntu</strong> ở phần sau, bạn sẽ phải thực hiện thao tác bỏ qua (escape) đối với các kí tự đặc biệt ấy, và điều đó sẽ gia tăng độ phức tạp của bài lab này một cách không cần thiết.</p>
-</div>
-
-<p><img src="/images/asg/003.png?width=90pc" alt="DatabaseUsername&amp;Password"></p>
-<ol start="4">
-<li>Tiếp tục kéo màn hình xuống, mục <strong>DB instance Class</strong>: dùng để chọn phân loại DB Instance.</li>
-</ol>
-<ul>
-<li>Click chọn phân loại <strong>Burstatble</strong>.</li>
-<li>Click chọn DB instance class : <strong>db.t2.micro</strong>.</li>
-<li>Giữ nguyên tùy chọn cho mục <strong>Storage</strong>.</li>
-</ul>
-<p><img src="/images/asg/004.png?width=90pc" alt="Database"></p>
-<ol start="5">
-<li>Tiếp tục kéo màn hình xuống, mục <strong>Connectivity</strong>:</li>
-</ol>
-<ul>
-<li><strong>Virtual private cloud (VPC)</strong>: giữ nguyên VPC mặc định.</li>
-<li><strong>Subnet group</strong>: giữ nguyên Subnet group mặc định.</li>
-<li><strong>Public access</strong>: chọn <strong>No</strong></li>
-<li><strong>VPC security group</strong>: Chọn <strong>Choose existing</strong>.</li>
-<li><strong>Existing VPC security groups</strong>: Chọn tên Security Group mà bạn đã tạo ở phần 1 (ví dụ: <strong>sharenote-sg</strong> và để nguyên <strong>default</strong> security group.)</li>
-<li><strong>Availability Zone</strong>: chọn <strong>ap-southeast-1a</strong></li>
-</ul>
-<p><img src="/images/asg/005.png?width=90pc" alt="Database"></p>
-<ol start="6">
-<li>Kéo màn hình xuống và click để mở rộng mục <strong>Additional configuration</strong>.</li>
-</ol>
-<ul>
-<li>Tại mục <strong>Database options</strong> phần <strong>Initial database name</strong>: Nhập vào tên của database sẽ được khởi tạo ban đầu (ví dụ: <strong>NoteDB</strong>)</li>
-<li>Các phần còn lại, bạn hãy giữ nguyên mặc định.</li>
-</ul>
-<p><img src="/images/asg/006.png?width=90pc" alt="Database"></p>
-<ol start="7">
-<li>
-<p>Kéo màn hình xuống cuối trang và click <strong>Create database</strong>.</p>
-</li>
-<li>
-<p>Database sẽ được khởi tạo và ở trạng thái <strong>Creating</strong>. Hãy đợi cho Status chuyển sang <strong>Available</strong> để có thể sử dụng.</p>
-</li>
-<li>
-<p>Click <strong>sharenote-db</strong> trong danh sách <strong>Databases</strong>.</p>
-</li>
-<li>
-<p>Ở trang thông tin database, tab <strong>Connectivity &amp; security</strong>, ghi chú lại <strong>Endpoint</strong> của database. Chúng ta sẽ sử dụng thông tin này cho việc cấu hình ở bước kế tiếp.</p>
-</li>
-</ol>
-<p><img src="/images/asg/008.png?width=90pc" alt="Database"></p>
-<p>Trong bước này chúng ta đã hoàn thành việc tạo Database cho ShareNote, tiếp theo chúng ta sẽ tạo một EC2 instance để tiến hành cài đặt ứng dụng ShareNote.</p>
 
 
 
@@ -1061,7 +1047,7 @@
 	 
 	 
 		
-			<a class="nav nav-prev" href="/vi/2-preparation-steps/1-glue-role/" title="Giới thiệu"> <i class="fa fa-chevron-left"></i></a>
+			<a class="nav nav-prev" href="/vi/2-preparation-steps/1-glue-role/" title="Tạo Glue Service Role"> <i class="fa fa-chevron-left"></i></a>
 		
 		
 			<a class="nav nav-next" href="/vi/2-preparation-steps/3-policy/" title="Tạo Policy" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
@@ -1074,19 +1060,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1734625545"></script>
-    <script src="/js/perfect-scrollbar.min.js?1734625545"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1734625545"></script>
-    <script src="/js/jquery.sticky.js?1734625545"></script>
-    <script src="/js/featherlight.min.js?1734625545"></script>
-    <script src="/js/highlight.pack.js?1734625545"></script>
+    <script src="/js/clipboard.min.js?1743941522"></script>
+    <script src="/js/perfect-scrollbar.min.js?1743941522"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1743941522"></script>
+    <script src="/js/jquery.sticky.js?1743941522"></script>
+    <script src="/js/featherlight.min.js?1743941522"></script>
+    <script src="/js/highlight.pack.js?1743941522"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1734625545"></script>
-    <script src="/js/learn.js?1734625545"></script>
-    <script src="/js/hugo-learn.js?1734625545"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1743941522"></script>
+    <script src="/js/learn.js?1743941522"></script>
+    <script src="/js/hugo-learn.js?1743941522"></script>
 
-    <link href="/mermaid/mermaid.css?1734625545" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1734625545"></script>
+    <link href="/mermaid/mermaid.css?1743941522" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1743941522"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
