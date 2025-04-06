@@ -2,275 +2,275 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/vi/</loc>
+    <loc>http://localhost:1313/vi/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/"
+                href="http://localhost:1313/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/"
+                href="http://localhost:1313/vi/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/1-introduction/</loc>
+    <loc>http://localhost:1313/vi/1-introduction/</loc>
     <lastmod>1970-01-01T07:33:41+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/1-introduction/"
+                href="http://localhost:1313/1-introduction/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/1-introduction/"
+                href="http://localhost:1313/vi/1-introduction/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-analysis-visualization/1-analysis-athena/</loc>
+    <loc>http://localhost:1313/vi/6-analysis-visualization/1-analysis-athena/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-analysis-visualization/1-analysis-athena/"
+                href="http://localhost:1313/6-analysis-visualization/1-analysis-athena/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-analysis-visualization/1-analysis-athena/"
+                href="http://localhost:1313/vi/6-analysis-visualization/1-analysis-athena/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-create-datalog/1-create-glue-crawler/</loc>
+    <loc>http://localhost:1313/vi/4-create-datalog/1-create-glue-crawler/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-create-datalog/1-create-glue-crawler/"
+                href="http://localhost:1313/4-create-datalog/1-create-glue-crawler/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-create-datalog/1-create-glue-crawler/"
+                href="http://localhost:1313/vi/4-create-datalog/1-create-glue-crawler/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-preparation-steps/1-glue-role/</loc>
+    <loc>http://localhost:1313/vi/2-preparation-steps/1-glue-role/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-preparation-steps/1-glue-role/"
+                href="http://localhost:1313/2-preparation-steps/1-glue-role/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-preparation-steps/1-glue-role/"
+                href="http://localhost:1313/vi/2-preparation-steps/1-glue-role/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-lambda-setup/1-creating-bucket/</loc>
+    <loc>http://localhost:1313/vi/3-lambda-setup/1-creating-bucket/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-lambda-setup/1-creating-bucket/"
+                href="http://localhost:1313/3-lambda-setup/1-creating-bucket/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-lambda-setup/1-creating-bucket/"
+                href="http://localhost:1313/vi/3-lambda-setup/1-creating-bucket/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-preparation-steps/</loc>
+    <loc>http://localhost:1313/vi/2-preparation-steps/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-preparation-steps/"
+                href="http://localhost:1313/2-preparation-steps/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-preparation-steps/"
+                href="http://localhost:1313/vi/2-preparation-steps/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-create-datalog/2-data-check/</loc>
+    <loc>http://localhost:1313/vi/4-create-datalog/2-data-check/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-create-datalog/2-data-check/"
+                href="http://localhost:1313/4-create-datalog/2-data-check/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-create-datalog/2-data-check/"
+                href="http://localhost:1313/vi/4-create-datalog/2-data-check/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-lambda-setup/2-creating-lambda/</loc>
+    <loc>http://localhost:1313/vi/3-lambda-setup/2-creating-lambda/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-lambda-setup/2-creating-lambda/"
+                href="http://localhost:1313/3-lambda-setup/2-creating-lambda/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-lambda-setup/2-creating-lambda/"
+                href="http://localhost:1313/vi/3-lambda-setup/2-creating-lambda/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-preparation-steps/2-lambda-role/</loc>
+    <loc>http://localhost:1313/vi/2-preparation-steps/2-lambda-role/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-preparation-steps/2-lambda-role/"
+                href="http://localhost:1313/2-preparation-steps/2-lambda-role/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-preparation-steps/2-lambda-role/"
+                href="http://localhost:1313/vi/2-preparation-steps/2-lambda-role/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-analysis-visualization/2-visualize-quicksight/</loc>
+    <loc>http://localhost:1313/vi/6-analysis-visualization/2-visualize-quicksight/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-analysis-visualization/2-visualize-quicksight/"
+                href="http://localhost:1313/6-analysis-visualization/2-visualize-quicksight/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-analysis-visualization/2-visualize-quicksight/"
+                href="http://localhost:1313/vi/6-analysis-visualization/2-visualize-quicksight/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/2-preparation-steps/3-policy/</loc>
+    <loc>http://localhost:1313/vi/2-preparation-steps/3-policy/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/2-preparation-steps/3-policy/"
+                href="http://localhost:1313/2-preparation-steps/3-policy/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/2-preparation-steps/3-policy/"
+                href="http://localhost:1313/vi/2-preparation-steps/3-policy/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-lambda-setup/3-creating-eventbridge/</loc>
+    <loc>http://localhost:1313/vi/3-lambda-setup/3-creating-eventbridge/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-lambda-setup/3-creating-eventbridge/"
+                href="http://localhost:1313/3-lambda-setup/3-creating-eventbridge/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-lambda-setup/3-creating-eventbridge/"
+                href="http://localhost:1313/vi/3-lambda-setup/3-creating-eventbridge/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-lambda-setup/</loc>
+    <loc>http://localhost:1313/vi/3-lambda-setup/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-lambda-setup/"
+                href="http://localhost:1313/3-lambda-setup/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-lambda-setup/"
+                href="http://localhost:1313/vi/3-lambda-setup/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/3-lambda-setup/4-watch-result/</loc>
+    <loc>http://localhost:1313/vi/3-lambda-setup/4-watch-result/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/3-lambda-setup/4-watch-result/"
+                href="http://localhost:1313/3-lambda-setup/4-watch-result/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/3-lambda-setup/4-watch-result/"
+                href="http://localhost:1313/vi/3-lambda-setup/4-watch-result/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/4-create-datalog/</loc>
+    <loc>http://localhost:1313/vi/4-create-datalog/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/4-create-datalog/"
+                href="http://localhost:1313/4-create-datalog/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/4-create-datalog/"
+                href="http://localhost:1313/vi/4-create-datalog/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/5-data-transformation/</loc>
+    <loc>http://localhost:1313/vi/5-data-transformation/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/5-data-transformation/"
+                href="http://localhost:1313/5-data-transformation/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/5-data-transformation/"
+                href="http://localhost:1313/vi/5-data-transformation/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/6-analysis-visualization/</loc>
+    <loc>http://localhost:1313/vi/6-analysis-visualization/</loc>
     <lastmod>1970-01-01T07:33:40+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/6-analysis-visualization/"
+                href="http://localhost:1313/6-analysis-visualization/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/6-analysis-visualization/"
+                href="http://localhost:1313/vi/6-analysis-visualization/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/7-clean-up/</loc>
+    <loc>http://localhost:1313/vi/7-clean-up/</loc>
     <lastmod>2021-06-08T18:57:03+07:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/7-clean-up/"
+                href="http://localhost:1313/7-clean-up/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/7-clean-up/"
+                href="http://localhost:1313/vi/7-clean-up/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/categories/</loc>
+    <loc>http://localhost:1313/vi/categories/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/categories/"
+                href="http://localhost:1313/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/categories/"
+                href="http://localhost:1313/vi/categories/"
                 />
   </url><url>
-    <loc>//localhost:1313/vi/tags/</loc>
+    <loc>http://localhost:1313/vi/tags/</loc>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="//localhost:1313/tags/"
+                href="http://localhost:1313/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="vi"
-                href="//localhost:1313/vi/tags/"
+                href="http://localhost:1313/vi/tags/"
                 />
   </url>
 </urlset>
